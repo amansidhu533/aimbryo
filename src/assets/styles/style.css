@@ -9,6 +9,31 @@ body {
   font-weight: 400;
   font-family: 'Poppins', 'Inter', sans-serif;
 }
+/* For WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 8px; 
+  height: 8px;  
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;  
+  border-radius: 10px;  
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7D54F3;  
+  border-radius: 10px;  
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7D54F3;  
+}
+
+/* For Firefox */
+.scrollbar {
+  scrollbar-width: thin;  
+  scrollbar-color: #7D54F3 #f1f1f1; 
+}
 
 .ant-layout.ant-layout-has-sider {
   flex-direction: row;
@@ -94,7 +119,7 @@ body {
   height: 100vh;
   overflow: auto;
   margin: 0;
-  padding: 33px 20px;
+  padding: 33px 12px;
   background-color: #fff;
   box-shadow: 1px 1px 6px 0px #00000012;
 
@@ -113,6 +138,8 @@ body {
 
 .layout-dashboard .ant-layout-sider.sider-primary .brand {
   font-weight: 600;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .layout-dashboard .ant-layout-sider.sider-primary .brand span {
@@ -137,8 +164,14 @@ body {
 
 .layout-dashboard .ant-layout-sider.sider-primary .ant-menu-inline .ant-menu-item,
 .layout-dashboard .ant-layout-sider.sider-primary .ant-menu-inline .ant-menu-submenu {
+  width: 100%;
   margin: 0;
   overflow: visible;
+  border-radius: 0px 20px 20px 20px;
+  background-color: transparent;
+  margin-bottom: 10px;
+  font-family: 'Poppins';
+  font-size: 16px;
 }
 
 .layout-dashboard .ant-layout-sider.sider-primary .ant-menu-item,
@@ -146,6 +179,7 @@ body {
   padding: 0 !important;
   height: auto;
   line-height: normal;
+
 }
 
 .layout-dashboard .ant-layout-sider.sider-primary .ant-menu-inline .ant-menu-item:after,
@@ -171,40 +205,70 @@ body {
 .layout-dashboard .ant-layout-sider.sider-primary .ant-menu-submenu.ant-menu-item-selected .active,
 .layout-dashboard .ant-layout-sider.sider-primary .ant-menu-submenu .active {
   background-color: #fff;
-  box-shadow: 0 20px 27px rgb(0 0 0 / 5%);
   font-weight: 600;
+
+  border-radius: 0px 20px 20px 20px;
+  box-shadow: 3px 3px 10px 0px #0000001C;
+
 }
+
+.layout-dashboard .ant-layout-sider.sider-primary .ant-menu-item.ant-menu-item-selected .active::before,
+.layout-dashboard .ant-layout-sider.sider-primary .ant-menu-item .active::before,
+.layout-dashboard .ant-layout-sider.sider-primary .ant-menu-submenu.ant-menu-item-selected .active::before,
+.layout-dashboard .ant-layout-sider.sider-primary .ant-menu-submenu .active::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 0px 20px 20px 20px;
+  padding: 1.5px;
+  background: linear-gradient(45deg, #7D54F3, #CEBCFF);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+
 
 .layout-dashboard .ant-layout-sider.sider-primary .ant-menu-item a,
 .layout-dashboard .ant-layout-sider.sider-primary .ant-menu-submenu a {
-  padding: 10px 16px;
-  color: #141414;
-  border-radius: 8px;
-  display: flex;
   align-items: center;
+  color: #272D36;
+  display: flex;
   white-space: nowrap;
+  padding: 14px 18px 14px 18px;
+  border-radius: 0px 20px 20px 20px;
+  box-shadow: 3px 3px 10px 0px transparent;
+  border: 1px solid transparent;
+  border-image-source: transparent;
+  transition: all 0.5s ease-in;
 }
 
 .layout-dashboard .ant-layout-sider.sider-primary.ant-layout-sider-primary .ant-menu-item.ant-menu-item-selected .active .icon,
 .layout-dashboard .ant-layout-sider.sider-primary.ant-layout-sider-primary .ant-menu-item .active .icon {
-  background-color: #7D54F3;
+  /* background-color: #7D54F3; */
+}
+
+.layout-dashboard .ant-layout-sider.sider-primary.ant-layout-sider-primary .ant-menu-item.ant-menu-item-selected .active .icon svg path,
+.layout-dashboard .ant-layout-sider.sider-primary.ant-layout-sider-primary .ant-menu-item .active .icon svg path {
+  fill: #a78bf9;
+  stroke: #baa5fa;
+  stroke-width: 1.5;
 }
 
 .layout-dashboard .ant-layout-sider.sider-primary .ant-menu-item.ant-menu-item-selected .active .icon,
 .layout-dashboard .ant-layout-sider.sider-primary .ant-menu-item .active .icon,
 .layout-dashboard .ant-layout-sider.sider-primary .ant-menu-submenu.ant-menu-item-selected .active .icon,
 .layout-dashboard .ant-layout-sider.sider-primary .ant-menu-submenu .active .icon {
-  background-color: #7D54F3;
+  /* background-color: #7D54F3; */
 }
 
 .layout-dashboard .ant-layout-sider.sider-primary .ant-menu-item .icon,
 .layout-dashboard .ant-layout-sider.sider-primary .ant-menu-submenu .icon {
   display: inline-flex;
-  width: 32px;
-  height: 32px;
-  background-color: #fff;
-  box-shadow: 0 4px 6px rgb(0 0 0 / 12%);
-  border-radius: 6px;
+  width: 24px;
+  height: 24px;
   justify-content: center;
   align-items: center;
   margin-right: 11px;
@@ -220,12 +284,14 @@ body {
 
 .layout-dashboard .ant-layout-sider.sider-primary .ant-menu-item svg path,
 .layout-dashboard .ant-layout-sider.sider-primary .ant-menu-submenu svg path {
-  fill: #bfbfbf;
+  /* fill: #bfbfbf; */
 }
 
 .layout-dashboard .ant-layout-sider.sider-primary .ant-menu-item a:hover,
 .layout-dashboard .ant-layout-sider.sider-primary .ant-menu-submenu a:hover {
   color: #141414;
+  background-color: #fff;
+  box-shadow: 3px 3px 10px 0px #0000001C;
 }
 
 .layout-dashboard .ant-layout-sider.sider-primary .ant-menu-inline .ant-menu-item.menu-item-header {
@@ -255,7 +321,7 @@ body {
 .layout-dashboard .ant-layout-sider.sider-primary.ant-layout-sider-primary .footer-box {
   background: #F9F7FF;
   box-shadow: none;
-  font-family: Inter;
+  font-family: "Inter";
   font-size: 12px;
   font-weight: 400;
   line-height: 14.52px;
@@ -265,7 +331,7 @@ body {
 
 .layout-dashboard .ant-layout-sider.sider-primary.ant-layout-sider-primary .footer-box {
   box-shadow: none;
-  font-family: Inter;
+  font-family: "Inter";
   font-size: 12px;
   font-weight: 400;
   line-height: 14.52px;
@@ -274,70 +340,59 @@ body {
   border-radius: 16px;
 }
 
-.layout-dashboard .ant-layout-sider.sider-primary.ant-layout-sider-primary .footer-box h6 {
-
-  color: #787486;
-}
-
-.layout-dashboard .ant-layout-sider.sider-primary.ant-layout-sider-primary .footer-box p {
-
-  color: #787486;
-}
 
 .layout-dashboard .ant-layout-sider.sider-primary .footer-box {
   background-color: #fff;
   color: #141414;
-  padding: 20px;
   border-radius: 8px;
   box-shadow: 0 20px 27px rgb(0 0 0 / 5%);
-  margin-bottom: 8px;
+  margin: 40px 8px;
+  padding: 0 20px 20px;
+  font-family: "Inter";
 }
 
-.layout-dashboard .ant-layout-sider.sider-primary.ant-layout-sider-primary .footer-box .icon {
-  background-color: #fff;
-}
 
 .layout-dashboard .ant-layout-sider.sider-primary .footer-box .icon {
   display: inline-flex;
-  width: 32px;
-  height: 32px;
-  box-shadow: 0 4px 6px rgb(0 0 0 / 12%);
-  border-radius: 6px;
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
   justify-content: center;
   align-items: center;
   margin-bottom: 15px;
-  background-color: #7D54F3;
+  background: radial-gradient(circle, #fbeecd 30%, #f8f5f3 70%);
+  margin-top: -33px;
 }
 
 
 
 .layout-dashboard .ant-layout-sider.sider-primary .footer-box h6 {
-  font-family: Inter;
+  color: #787486;
   font-size: 14px;
-  font-weight: 500;
-  line-height: 16.94px; 
+  font-weight: 600;
+  line-height: 16.94px;
   color: #272D36;
+  padding: 0;
+  margin: 0;
 }
 
 
 .layout-dashboard .ant-layout-sider.sider-primary .footer-box p {
-  font-family: Inter;
+  color: #787486; 
   font-size: 12px;
   font-weight: 400;
   line-height: 14.52px; 
-  color: #787486;
 }
 
 .layout-dashboard .ant-layout-sider.sider-primary.ant-layout-sider-primary .footer-box button {
-  background-color: #fff;
+  background: #FFFFFF;
   color: #272D36;
-  width: 166px;
+  width: 100%;
   height: 40px;
-  border-radius: 4px;
-  font-family: Inter;
+  border-radius: 4px; 
   font-size: 14px;
   font-weight: 500;
-  line-height: 16.94px;
+  line-height: 16.94px; 
   box-shadow: none;
 }
 
@@ -418,10 +473,12 @@ body {
 }
 
 .layout-dashboard .ant-page-header-heading .ant-page-header-heading-title {
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 20px;
   margin-top: 4px;
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: left;
 }
 
 .layout-dashboard .header-control {
