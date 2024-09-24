@@ -9,30 +9,31 @@ body {
   font-weight: 400;
   font-family: 'Poppins', 'Inter', sans-serif;
 }
+
 /* For WebKit browsers (Chrome, Safari) */
 ::-webkit-scrollbar {
-  width: 8px; 
-  height: 8px;  
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;  
-  border-radius: 10px;  
+  background: #f1f1f1;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #7D54F3;  
-  border-radius: 10px;  
+  background: #7D54F3;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #7D54F3;  
+  background: #7D54F3;
 }
 
 /* For Firefox */
 .scrollbar {
-  scrollbar-width: thin;  
-  scrollbar-color: #7D54F3 #f1f1f1; 
+  scrollbar-width: thin;
+  scrollbar-color: #7D54F3 #f1f1f1;
 }
 
 .ant-layout.ant-layout-has-sider {
@@ -44,6 +45,60 @@ body {
   text-align: left;
   position: relative;
   overflow-x: hidden;
+}
+
+.header-icons {
+  height: 40px;
+  width: 40px;
+  border-radius: 12px;
+  display: flex;
+  background: #FFFFFF;
+  box-shadow: 1px 1px 6px 0px #00000012;
+  margin-left: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.divider {
+  display: inline-block;
+  border: 1px solid #C6CAD1;
+  width: 1px;
+  height: 20px;
+  opacity: 0.6;
+  margin: 0 20px 0 32px;
+}
+
+.logo-list {
+  display: flex;
+  align-items: flex-end;
+}
+
+.logo-cont {
+  display: flex;
+  padding: 0px;
+  gap: 12px;
+}
+
+.logo-cont li {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 5px;
+  list-style: none;
+  width: 110px;
+  height: 33px;
+  display: flex;
+  justify-content: center;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.logo-cont li.selected {
+  opacity: 1;
+}
+
+.logo-list img {
+  height: 25px;
+  width: auto;
 }
 
 @media (min-width: 992px) {
@@ -120,7 +175,7 @@ body {
   overflow: auto;
   margin: 0;
   padding: 33px 12px;
-  background-color: #fff;
+  background-color: #fff !important;
   box-shadow: 1px 1px 6px 0px #00000012;
 
 }
@@ -204,7 +259,7 @@ body {
 .layout-dashboard .ant-layout-sider.sider-primary .ant-menu-item .active,
 .layout-dashboard .ant-layout-sider.sider-primary .ant-menu-submenu.ant-menu-item-selected .active,
 .layout-dashboard .ant-layout-sider.sider-primary .ant-menu-submenu .active {
-  background-color: #fff;
+  background-color: transparent;
   font-weight: 600;
 
   border-radius: 0px 20px 20px 20px;
@@ -378,10 +433,10 @@ body {
 
 
 .layout-dashboard .ant-layout-sider.sider-primary .footer-box p {
-  color: #787486; 
+  color: #787486;
   font-size: 12px;
   font-weight: 400;
-  line-height: 14.52px; 
+  line-height: 14.52px;
 }
 
 .layout-dashboard .ant-layout-sider.sider-primary.ant-layout-sider-primary .footer-box button {
@@ -389,10 +444,10 @@ body {
   color: #272D36;
   width: 100%;
   height: 40px;
-  border-radius: 4px; 
+  border-radius: 4px;
   font-size: 14px;
   font-weight: 500;
-  line-height: 16.94px; 
+  line-height: 16.94px;
   box-shadow: none;
 }
 
@@ -484,8 +539,10 @@ body {
 .layout-dashboard .header-control {
   display: flex;
   flex-direction: row-reverse;
+  margin: 0;
   align-items: center;
   margin-top: 10px;
+  padding: 0 !important;
 }
 
 .ant-dropdown-menu.ant-dropdown-menu-split.header-notifications-dropdown {
@@ -764,6 +821,8 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav li.ant-menu-it
   min-width: 0;
   overflow: visible;
   text-overflow: ellipsis;
+  background: transparent;
+  width: 100%;
 }
 
 ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav li::after {
@@ -1026,16 +1085,27 @@ button.ant-btn.bell strong {
   border-radius: 12px;
 }
 
-.number span {
-  font-weight: 600;
-  color: #8c8c8c;
-  font-size: 14px;
+.number  {
+  font-family: 'Poppins';
 }
 
 .number h3 {
   font-weight: 700;
-  margin-bottom: 0px;
-  font-size: 30px;
+  margin: 0px;
+  font-size: 24px;
+  color: #232323;
+  font-family: 'Poppins';
+}
+.number span {
+  font-weight: 500;
+  color: #4A5157;
+  font-size: 14px;
+  opacity: 0.5;
+  font-family: 'Poppins';
+  line-height: 21px;
+  margin: 4px 0 0 0;
+  display: inline-block;
+  letter-spacing: 0.2px;
 }
 
 .number h3 small {
@@ -1044,14 +1114,12 @@ button.ant-btn.bell strong {
 }
 
 .icon-box {
-  width: 48px;
-  height: 48px;
-  text-align: center;
-  background: #7D54F3;
-  color: #fff;
-  border-radius: 0.5rem;
-  margin-left: auto;
-  line-height: 55px;
+  width: 40px;
+  height: 40px;
+  text-align: left;
+  color: #fff; 
+  
+  display: flex;
 }
 
 .icon-box span {
@@ -1629,7 +1697,7 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav li:active {
   padding-top: 100px;
 }
 
-.ant-card-body {
+.ant-card .ant-card-body {
   padding: 16px;
 }
 
@@ -2440,9 +2508,11 @@ section.ant-layout.layout-content .ant-layout-content.content-ant {
 
 .layout-dashboard .ant-card {
   border-radius: 12px;
-  box-shadow: 0 20px 27px rgb(0 0 0 / 5%);
+  box-shadow:none;
 }
-
+.number .ant-row {
+  align-items: flex-start !important;
+}
 .card-credit {
   background-image: url("../images/info-card-3.jpg");
   background-position: 50%;
