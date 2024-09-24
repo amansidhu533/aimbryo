@@ -28,7 +28,7 @@ import avtar from "../../assets/images/team-2.jpg";
 
 const ButtonContainer = styled.div`
   .ant-btn-primary {
-    background-color: #7D54F3;
+    background-color: #7d54f3;
   }
   .ant-btn-success {
     background-color: #52c41a;
@@ -43,30 +43,117 @@ const ButtonContainer = styled.div`
     border-radius: 5px;
   }
   .ant-switch-active {
-    background-color: #7D54F3;
+    background-color: #7d54f3;
   }
 `;
-
 const bell = [
   <svg
     width="20"
-    height="20"
-    viewBox="0 0 20 20"
+    height="21"
+    viewBox="0 0 20 21"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    key={0}
   >
+    <g opacity="0.4">
+      <path
+        d="M17 14.1083C16.7667 14.7333 16.275 15.2083 15.6334 15.425C14.7334 15.725 13.8084 15.95 12.875 16.1083C12.7834 16.125 12.6917 16.1417 12.6 16.15C12.45 16.175 12.3 16.1917 12.15 16.2083C11.9667 16.2333 11.775 16.25 11.5834 16.2667C11.0584 16.3083 10.5417 16.3333 10.0167 16.3333C9.48336 16.3333 8.95003 16.3083 8.42503 16.2583C8.20003 16.2417 7.98336 16.2167 7.76669 16.1833C7.64169 16.1667 7.51669 16.15 7.40003 16.1333C7.30836 16.1167 7.21669 16.1083 7.12503 16.0917C6.20003 15.9417 5.28336 15.7167 4.39169 15.4167C3.72503 15.1917 3.21669 14.7167 2.99169 14.1083C2.76669 13.5083 2.85003 12.8083 3.20836 12.2083L4.15003 10.6417C4.35003 10.3 4.53336 9.64166 4.53336 9.24166V7.69166C4.53336 4.66666 6.99169 2.20833 10.0167 2.20833C13.0334 2.20833 15.4917 4.66666 15.4917 7.69166V9.24166C15.4917 9.64166 15.675 10.3 15.8834 10.6417L16.825 12.2083C17.1667 12.7917 17.2334 13.475 17 14.1083Z"
+        fill="url(#paint0_linear_68_544)"
+      />
+      <path
+        d="M17 14.1083C16.7667 14.7333 16.275 15.2083 15.6334 15.425C14.7334 15.725 13.8084 15.95 12.875 16.1083C12.7834 16.125 12.6917 16.1417 12.6 16.15C12.45 16.175 12.3 16.1917 12.15 16.2083C11.9667 16.2333 11.775 16.25 11.5834 16.2667C11.0584 16.3083 10.5417 16.3333 10.0167 16.3333C9.48336 16.3333 8.95003 16.3083 8.42503 16.2583C8.20003 16.2417 7.98336 16.2167 7.76669 16.1833C7.64169 16.1667 7.51669 16.15 7.40003 16.1333C7.30836 16.1167 7.21669 16.1083 7.12503 16.0917C6.20003 15.9417 5.28336 15.7167 4.39169 15.4167C3.72503 15.1917 3.21669 14.7167 2.99169 14.1083C2.76669 13.5083 2.85003 12.8083 3.20836 12.2083L4.15003 10.6417C4.35003 10.3 4.53336 9.64166 4.53336 9.24166V7.69166C4.53336 4.66666 6.99169 2.20833 10.0167 2.20833C13.0334 2.20833 15.4917 4.66666 15.4917 7.69166V9.24166C15.4917 9.64166 15.675 10.3 15.8834 10.6417L16.825 12.2083C17.1667 12.7917 17.2334 13.475 17 14.1083Z"
+        fill="url(#paint1_linear_68_544)"
+      />
+    </g>
     <path
-      d="M10 2C6.68632 2 4.00003 4.68629 4.00003 8V11.5858L3.29292 12.2929C3.00692 12.5789 2.92137 13.009 3.07615 13.3827C3.23093 13.7564 3.59557 14 4.00003 14H16C16.4045 14 16.7691 13.7564 16.9239 13.3827C17.0787 13.009 16.9931 12.5789 16.7071 12.2929L16 11.5858V8C16 4.68629 13.3137 2 10 2Z"
-      fill="#111827"
-    ></path>
+      d="M9.99997 9.46667C9.64997 9.46667 9.36664 9.18334 9.36664 8.83334V6.25C9.36664 5.9 9.64997 5.61667 9.99997 5.61667C10.35 5.61667 10.6333 5.9 10.6333 6.25V8.83334C10.625 9.18334 10.3416 9.46667 9.99997 9.46667Z"
+      fill="url(#paint2_linear_68_544)"
+    />
     <path
-      d="M10 18C8.34315 18 7 16.6569 7 15H13C13 16.6569 11.6569 18 10 18Z"
-      fill="#111827"
-    ></path>
+      d="M9.99997 9.46667C9.64997 9.46667 9.36664 9.18334 9.36664 8.83334V6.25C9.36664 5.9 9.64997 5.61667 9.99997 5.61667C10.35 5.61667 10.6333 5.9 10.6333 6.25V8.83334C10.625 9.18334 10.3416 9.46667 9.99997 9.46667Z"
+      fill="url(#paint3_linear_68_544)"
+    />
+    <path
+      d="M12.3584 17.175C12.0084 18.1417 11.0834 18.8333 10 18.8333C9.34169 18.8333 8.69169 18.5667 8.23336 18.0917C7.96669 17.8417 7.76669 17.5083 7.65002 17.1667C7.75836 17.1833 7.86669 17.1917 7.98336 17.2083C8.17502 17.2333 8.37502 17.2583 8.57502 17.275C9.05002 17.3167 9.53336 17.3417 10.0167 17.3417C10.4917 17.3417 10.9667 17.3167 11.4334 17.275C11.6084 17.2583 11.7834 17.25 11.95 17.225C12.0834 17.2083 12.2167 17.1917 12.3584 17.175Z"
+      fill="url(#paint4_linear_68_544)"
+    />
+    <path
+      d="M12.3584 17.175C12.0084 18.1417 11.0834 18.8333 10 18.8333C9.34169 18.8333 8.69169 18.5667 8.23336 18.0917C7.96669 17.8417 7.76669 17.5083 7.65002 17.1667C7.75836 17.1833 7.86669 17.1917 7.98336 17.2083C8.17502 17.2333 8.37502 17.2583 8.57502 17.275C9.05002 17.3167 9.53336 17.3417 10.0167 17.3417C10.4917 17.3417 10.9667 17.3167 11.4334 17.275C11.6084 17.2583 11.7834 17.25 11.95 17.225C12.0834 17.2083 12.2167 17.1917 12.3584 17.175Z"
+      fill="url(#paint5_linear_68_544)"
+    />
+    <defs>
+      <linearGradient
+        id="paint0_linear_68_544"
+        x1="2.86688"
+        y1="2.20833"
+        x2="18.6033"
+        y2="4.09261"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="#BE68FC" />
+        <stop offset="1" stop-color="#9D19FF" />
+      </linearGradient>
+      <linearGradient
+        id="paint1_linear_68_544"
+        x1="2.86688"
+        y1="2.20833"
+        x2="18.6033"
+        y2="4.09261"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="#7D54F3" />
+        <stop offset="1" stop-color="#CEBCFF" />
+      </linearGradient>
+      <linearGradient
+        id="paint2_linear_68_544"
+        x1="9.36664"
+        y1="5.61667"
+        x2="10.7813"
+        y2="5.67183"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="#BE68FC" />
+        <stop offset="1" stop-color="#9D19FF" />
+      </linearGradient>
+      <linearGradient
+        id="paint3_linear_68_544"
+        x1="9.36664"
+        y1="5.61667"
+        x2="10.7813"
+        y2="5.67183"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="#7D54F3" />
+        <stop offset="1" stop-color="#CEBCFF" />
+      </linearGradient>
+      <linearGradient
+        id="paint4_linear_68_544"
+        x1="7.65002"
+        y1="17.1667"
+        x2="12.3855"
+        y2="18.7522"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="#BE68FC" />
+        <stop offset="1" stop-color="#9D19FF" />
+      </linearGradient>
+      <linearGradient
+        id="paint5_linear_68_544"
+        x1="7.65002"
+        y1="17.1667"
+        x2="12.3855"
+        y2="18.7522"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="#7D54F3" />
+        <stop offset="1" stop-color="#CEBCFF" />
+      </linearGradient>
+    </defs>
   </svg>,
 ];
-
+const messsages = [
+  `<img src="../src/assets/images/icon-messages.svg" alt="/>`
+,
+];
 const wifi = [
   <svg
     width="20"
@@ -287,13 +374,7 @@ function Header({
           <Button type="link" onClick={showDrawer}>
             {logsetting}
           </Button>
-          <Button
-            type="link"
-            className="sidebar-toggler"
-            onClick={() => onPress()}
-          >
-            {toggler}
-          </Button>
+
           <Drawer
             className="settings-drawer"
             mask={true}
@@ -312,92 +393,7 @@ function Header({
 
               <div className="sidebar-color">
                 <Title level={5}>Sidebar Color</Title>
-                <div className="theme-color mb-2">
-                  <ButtonContainer>
-                    <Button
-                      type="primary"
-                      onClick={() => handleSidenavColor("#7D54F3")}
-                    >
-                      1
-                    </Button>
-                    <Button
-                      type="success"
-                      onClick={() => handleSidenavColor("#52c41a")}
-                    >
-                      1
-                    </Button>
-                    <Button
-                      type="danger"
-                      onClick={() => handleSidenavColor("#d9363e")}
-                    >
-                      1
-                    </Button>
-                    <Button
-                      type="yellow"
-                      onClick={() => handleSidenavColor("#fadb14")}
-                    >
-                      1
-                    </Button>
-
-                    <Button
-                      type="black"
-                      onClick={() => handleSidenavColor("#111")}
-                    >
-                      1
-                    </Button>
-                  </ButtonContainer>
-                </div>
-
-                <div className="sidebarnav-color mb-2">
-                  <Title level={5}>Sidenav Type</Title>
-                  <Text>Choose between 2 different sidenav types.</Text>
-                  <ButtonContainer className="trans">
-                    <Button
-                      type={sidenavType === "transparent" ? "primary" : "white"}
-                      onClick={() => {
-                        handleSidenavType("transparent");
-                        setSidenavType("transparent");
-                      }}
-                    >
-                      TRANSPARENT
-                    </Button>
-                    <Button
-                      type={sidenavType === "white" ? "primary" : "white"}
-                      onClick={() => {
-                        handleSidenavType("#fff");
-                        setSidenavType("white");
-                      }}
-                    >
-                      WHITE
-                    </Button>
-                  </ButtonContainer>
-                </div>
-                <div className="fixed-nav mb-2">
-                  <Title level={5}>Navbar Fixed </Title>
-                  <Switch onChange={(e) => handleFixedNavbar(e)} />
-                </div>
-                <div className="ant-docment">
-                  <ButtonContainer>
-                    <Button type="black" size="large">
-                      FREE DOWNLOAD
-                    </Button>
-                    <Button size="large">VIEW DOCUMENTATION</Button>
-                  </ButtonContainer>
-                </div>
-                <div className="viewstar">
-                  <a href="#pablo">{<StarOutlined />} Star</a>
-                  <a href="#pablo"> 190</a>
-                </div>
-
-                <div className="ant-thank">
-                  <Title level={5} className="mb-2">
-                    Thank you for sharing!
-                  </Title>
-                  <ButtonContainer className="social">
-                    <Button type="black">{<TwitterOutlined />}TWEET</Button>
-                    <Button type="black">{<FacebookFilled />}SHARE</Button>
-                  </ButtonContainer>
-                </div>
+                <div className="theme-color mb-2"></div>
               </div>
             </div>
           </Drawer>
