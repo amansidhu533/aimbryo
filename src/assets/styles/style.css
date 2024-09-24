@@ -387,8 +387,6 @@ body {
   padding: 0 20px 20px;
   margin: 50px 0 0 0;
 }
- 
-
 
 .layout-dashboard .ant-layout-sider.sider-primary .footer-box .icon {
   display: inline-flex;
@@ -402,8 +400,6 @@ body {
   margin-top: -33px;
 }
 
-
-
 .layout-dashboard .ant-layout-sider.sider-primary .footer-box h6 {
   color: #787486;
   font-size: 14px;
@@ -413,7 +409,6 @@ body {
   padding: 0;
   margin: 0;
 }
-
 
 .layout-dashboard .ant-layout-sider.sider-primary .footer-box p {
   color: #787486;
@@ -464,7 +459,7 @@ body {
 .ant-radio-group .ant-radio-button-wrapper {
   font-weight: 600;
 }
- 
+
 .ant-menu-inline.ant-menu-root .ant-menu-item,
 .ant-menu-inline.ant-menu-root .ant-menu-submenu-title {
   display: block;
@@ -521,6 +516,47 @@ body {
   align-items: center;
   margin-top: 10px;
   padding: 0 !important;
+}
+
+.ant-tabs>.ant-tabs-nav .ant-tabs-nav-list,
+.ant-tabs>div>.ant-tabs-nav .ant-tabs-nav-list {
+  background: #F9F7FF;
+  gap: 0px;
+  border-radius: 22px;
+  justify-content: space-between;
+  padding: 4px;
+  width: 100%;
+  border: 0;
+}
+
+.ant-tabs .ant-tabs-tab {
+  padding: 0;
+  line-height: 26px;
+  border: 0;
+}
+
+.ant-tabs .ant-tabs-tab .ant-tabs-tab-btn {
+  padding: 0 45px;
+  border-radius: 16px;
+}
+
+.ant-tabs-ink-bar.ant-tabs-ink-bar-animated {
+  display: none;
+}
+
+.ant-tabs-top>.ant-tabs-nav::before,
+.ant-tabs-bottom>.ant-tabs-nav::before,
+.ant-tabs-top>div>.ant-tabs-nav::before,
+.ant-tabs-bottom>div>.ant-tabs-nav::before {
+  border-bottom: 0;
+}
+
+.ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn,
+.ant-tabs .ant-tabs-tab:hover .ant-tabs-tab-btn {
+  text-shadow: 0 0 0.25px currentcolor;
+  color: #fff;
+  background: linear-gradient(96.76deg, #7D54F3 0%, #CEBCFF 100%);
+
 }
 
 .ant-dropdown-menu.ant-dropdown-menu-split.header-notifications-dropdown {
