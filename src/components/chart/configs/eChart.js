@@ -1,9 +1,9 @@
 const eChart = {
   series: [
     {
-      name: "Sales",
-      data: [450, 200, 100, 220, 500, 100, 400, 230, 500],
-      color: "#fff",
+      name: "Users",
+      data: [30, 200, 100, 220],
+      color: "#F7F3FF",  
     },
   ],
 
@@ -12,7 +12,6 @@ const eChart = {
       type: "bar",
       width: "100%",
       height: "auto",
-
       toolbar: {
         show: false,
       },
@@ -30,7 +29,7 @@ const eChart = {
     stroke: {
       show: true,
       width: 1,
-      colors: ["transparent"],
+      colors: ["transparent"], 
     },
     grid: {
       show: true,
@@ -39,15 +38,10 @@ const eChart = {
     },
     xaxis: {
       categories: [
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
+        "<30",
+        "35 - 37",
+        "38 - 40",
+        "41 - 42", 
       ],
       labels: {
         show: true,
@@ -56,16 +50,7 @@ const eChart = {
         maxWidth: 160,
         style: {
           colors: [
-            "#fff",
-            "#fff",
-            "#fff",
-            "#fff",
-            "#fff",
-            "#fff",
-            "#fff",
-            "#fff",
-            "#fff",
-            "#fff",
+            "#4A5157",
           ],
         },
       },
@@ -78,27 +63,52 @@ const eChart = {
         maxWidth: 160,
         style: {
           colors: [
-            "#fff",
-            "#fff",
-            "#fff",
-            "#fff",
-            "#fff",
-            "#fff",
-            "#fff",
-            "#fff",
-            "#fff",
-            "#fff",
+            "#4A5157",
           ],
+        },
+        formatter: function (value) {
+          return value + "K";  
         },
       },
     },
-
     tooltip: {
       y: {
         formatter: function (val) {
           return "$ " + val + " thousands";
         },
       },
+    },
+    annotations: {
+      xaxis: [
+        {
+          x: "<30",
+          y: 0,
+          y2: 450, 
+          borderColor: "#4A5157",
+          borderDashArray: 4,
+        },
+        {
+          x: "35 - 37",
+          y: 0,
+          y2: 200,
+          borderColor: "#4A5157",
+          borderDashArray: 4,
+        },
+        {
+          x: "38 - 40",
+          y: 0,
+          y2: 100,
+          borderColor: "#4A5157",
+          borderDashArray: 4,
+        },
+        {
+          x: "41 - 42",
+          y: 0,
+          y2: 220,
+          borderColor: "#4A5157",
+          borderDashArray: 4,
+        },
+      ],
     },
   },
 };

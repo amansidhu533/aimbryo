@@ -39,6 +39,7 @@ import totalEmb from "../assets/images/icon-embryobank.svg";
 import avgEmb from "../assets/images/icon-embavg.svg";
 import avgTime from "../assets/images/icon-clock.svg";
 import Main from "../components/layout/Main";
+import DonutChart from "../components/chart/DonutChart";
 function Home() {
   const { Title, Text } = Typography;
 
@@ -46,29 +47,28 @@ function Home() {
 
   const [reverse, setReverse] = useState(false);
 
-   
   const count = [
     {
       desc: "Total Patients",
-      title: "1000", 
+      title: "1000",
       icon: totalPaitents,
       bnb: "bnb2",
     },
     {
       desc: "Total Embryo Graded",
-      title: "3000", 
+      title: "3000",
       icon: totalEmb,
       bnb: "bnb2",
     },
     {
       desc: "Avg #Emb Graded/Patient",
-      title: "06", 
+      title: "06",
       icon: avgEmb,
       bnb: "redtext",
     },
     {
       desc: "Avg Turnaround Time",
-      title: "123 Hrs", 
+      title: "123 Hrs",
       icon: avgTime,
       bnb: "bnb2",
     },
@@ -256,20 +256,20 @@ function Home() {
               md={12}
               lg={6}
               xl={6}
-              className="mb-24"
+              className="mb-8"
             >
               <Card bordered={false} className="criclebox ">
                 <div className="number">
                   <Row align="middle" gutter={[16, 0]}>
                     <Col xs={4}>
-                      <div className="icon-box"><img src={c.icon} alt={c.title}/></div>
+                      <div className="icon-box">
+                        <img src={c.icon} alt={c.title} />
+                      </div>
                     </Col>
-                     <Col xs={20}>
-                      <Title level={3}>
-                        {c.title}  
-                      </Title>
+                    <Col xs={20}>
+                      <Title level={3}>{c.title}</Title>
                       <span>{c.desc}</span>
-                    </Col>                   
+                    </Col>
                   </Row>
                 </div>
               </Card>
@@ -277,21 +277,66 @@ function Home() {
           ))}
         </Row>
 
-        <Row gutter={[24, 0]}>
-          <Col xs={24} sm={24} md={12} lg={12} xl={10} className="mb-24">
+        <Row gutter={[8, 0]}>
+          <Col xs={24} md={12} sm={24} lg={12} xl={7} className="mb-8">
             <Card bordered={false} className="criclebox h-full">
+              <Row gutter>
+                <Col
+                  xs={24}
+                  md={12}
+                  sm={24}
+                  lg={12}
+                  xl={14}
+                  className="mobile-24"
+                >
+                  <div className="h-full col-content p-20">
+                    <div className="ant-muse">
+                      <Text>Built by developers</Text>
+                      <Title level={5}>Muse Dashboard for Ant Design</Title>
+                      <Paragraph className="lastweek mb-36">
+                        From colors, cards, typography to complex elements, you
+                        will find the full documentation.
+                      </Paragraph>
+                    </div>
+                    <div className="card-footer">
+                      <a className="icon-move-right" href="#pablo">
+                        Read More
+                        {<RightOutlined />}
+                      </a>
+                    </div>
+                  </div>
+                </Col>
+                <Col
+                  xs={24}
+                  md={12}
+                  sm={24}
+                  lg={12}
+                  xl={10}
+                  className="col-img"
+                >
+                  <div className="ant-cret text-right">
+                    <img src={card} alt="" className="border10" />
+                  </div>
+                </Col>
+              </Row>
+            </Card>
+          </Col>
+          <Col xs={24} sm={24} md={12} lg={12} xl={9} className="mb-8">
+            <Card bordered={false} className="criclebox h-full">
+              <Title level={5}>Age Distribution</Title>
               <Echart />
             </Card>
           </Col>
-          <Col xs={24} sm={24} md={12} lg={12} xl={14} className="mb-24">
+          <Col xs={24} sm={24} md={12} lg={12} xl={8} className="mb-8">
             <Card bordered={false} className="criclebox h-full">
-              <LineChart />
+              <Title level={5}>Source</Title>
+              <DonutChart />
             </Card>
           </Col>
         </Row>
 
         <Row gutter={[24, 0]}>
-          <Col xs={24} sm={24} md={12} lg={12} xl={16} className="mb-24">
+          <Col xs={24} sm={24} md={12} lg={12} xl={16} className="mb-8">
             <Card bordered={false} className="criclebox cardbody h-full">
               <div className="project-ant">
                 <div>
@@ -360,7 +405,7 @@ function Home() {
               </div>
             </Card>
           </Col>
-          <Col xs={24} sm={24} md={12} lg={12} xl={8} className="mb-24">
+          <Col xs={24} sm={24} md={12} lg={12} xl={8} className="mb-8">
             <Card bordered={false} className="criclebox h-full">
               <div className="timeline-box">
                 <Title level={5}>Orders History</Title>
@@ -393,51 +438,7 @@ function Home() {
         </Row>
 
         <Row gutter={[24, 0]}>
-          <Col xs={24} md={12} sm={24} lg={12} xl={14} className="mb-24">
-            <Card bordered={false} className="criclebox h-full">
-              <Row gutter>
-                <Col
-                  xs={24}
-                  md={12}
-                  sm={24}
-                  lg={12}
-                  xl={14}
-                  className="mobile-24"
-                >
-                  <div className="h-full col-content p-20">
-                    <div className="ant-muse">
-                      <Text>Built by developers</Text>
-                      <Title level={5}>Muse Dashboard for Ant Design</Title>
-                      <Paragraph className="lastweek mb-36">
-                        From colors, cards, typography to complex elements, you
-                        will find the full documentation.
-                      </Paragraph>
-                    </div>
-                    <div className="card-footer">
-                      <a className="icon-move-right" href="#pablo">
-                        Read More
-                        {<RightOutlined />}
-                      </a>
-                    </div>
-                  </div>
-                </Col>
-                <Col
-                  xs={24}
-                  md={12}
-                  sm={24}
-                  lg={12}
-                  xl={10}
-                  className="col-img"
-                >
-                  <div className="ant-cret text-right">
-                    <img src={card} alt="" className="border10" />
-                  </div>
-                </Col>
-              </Row>
-            </Card>
-          </Col>
-
-          <Col xs={24} md={12} sm={24} lg={12} xl={10} className="mb-24">
+          <Col xs={24} md={12} sm={24} lg={12} xl={10} className="mb-8">
             <Card bordered={false} className="criclebox card-info-2 h-full">
               <div className="gradent h-full col-content">
                 <div className="card-content">
