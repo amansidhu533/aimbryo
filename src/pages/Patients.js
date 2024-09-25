@@ -3,75 +3,66 @@ import {
   Col,
   Card,
   Radio,
-  Table,
-  Upload,
   message,
-  Progress,
   Button,
-  Avatar,
   Typography,
+  Pagination,
 } from "antd";
-
-import { ToTopOutlined } from "@ant-design/icons";
-import { Link } from "react-router-dom";
-
-// Images
-import ava1 from "../assets/images/logo-shopify.svg";
-import ava2 from "../assets/images/logo-atlassian.svg";
-import ava3 from "../assets/images/logo-slack.svg";
-import ava5 from "../assets/images/logo-jira.svg";
-import ava6 from "../assets/images/logo-invision.svg";
-import face from "../assets/images/face-1.jpg";
-import face2 from "../assets/images/face-2.jpg";
-import face3 from "../assets/images/face-3.jpg";
-import face4 from "../assets/images/face-4.jpg";
-import face5 from "../assets/images/face-5.jpeg";
-import face6 from "../assets/images/face-6.jpeg";
-import pencil from "../assets/images/pencil.svg";
+import { useState } from "react";
 import Main from "../components/layout/Main";
+import ViewIcon from "../assets/images/icon-view.png";
+import UploadIcon from "../assets/images/icon-upload.png";
+import SearchIcon from "../assets/images/icon-search.png";
 
+import Input from "antd/es/input/Input";
 const { Title } = Typography;
 
-const formProps = {
-  name: "file",
-  action: "https://www.mocky.io/v2/5cc8019d300000980a055e76",
-  headers: {
-    authorization: "authorization-text",
-  },
-  onChange(info) {
-    if (info.file.status !== "uploading") {
-      console.log(info.file, info.fileList);
-    }
-    if (info.file.status === "done") {
-      message.success(`${info.file.name} file uploaded successfully`);
-    } else if (info.file.status === "error") {
-      message.error(`${info.file.name} file upload failed.`);
-    }
-  },
-};
 // table code start
 const columns = [
   {
-    title: "AUTHOR",
+    title: "Patient Name, MR No., Gender",
     dataIndex: "name",
     key: "name",
-    width: "32%",
   },
   {
-    title: "FUNCTION",
-    dataIndex: "function",
-    key: "function",
+    title: "Accession#",
+    dataIndex: "accession",
+    key: "accession",
   },
-
   {
-    title: "STATUS",
+    title: "Doctor",
+    key: "doctor",
+    dataIndex: "doctor",
+  },
+  {
+    title: "Notes",
+    key: "notes",
+    dataIndex: "notes",
+  },
+  {
+    title: "Upload Consent",
+    key: "uploadConsent",
+    dataIndex: "uploadConsent",
+  },
+  {
+    title: "Stim Report",
+    key: "stimReport",
+    dataIndex: "stimReport",
+  },
+  {
+    title: "Result",
+    key: "result",
+    dataIndex: "result",
+  },
+  {
+    title: "Report Data",
+    key: "reportData",
+    dataIndex: "reportData",
+  },
+  {
+    title: "Status",
     key: "status",
     dataIndex: "status",
-  },
-  {
-    title: "EMPLOYED",
-    key: "employed",
-    dataIndex: "employed",
   },
 ];
 
@@ -79,505 +70,559 @@ const data = [
   {
     key: "1",
     name: (
-      <>
-        <Avatar.Group>
-          <Avatar
-            className="shape-avatar"
-            shape="square"
-            size={40}
-            src={face2}
-          ></Avatar>
-          <div className="avatar-info">
-            <Title level={5}>Michael John</Title>
-            <p>michael@mail.com</p>
-          </div>
-        </Avatar.Group>{" "}
-      </>
+      <div className="name">
+        Ralph Edwards
+        <br />
+        <span>SDF45678543 |</span> <span>Female</span>
+      </div>
     ),
-    function: (
-      <>
-        <div className="author-info">
-          <Title level={5}>Manager</Title>
-          <p>Organization</p>
-        </div>
-      </>
+    accession: "123RND",
+    doctor: "Cody Fisher",
+    notes: (
+      <a
+        href="#text"
+        onClick={() => message.info("Viewing notes for Ralph Edwards")}
+        className="viewLink"
+      >
+        <img src={ViewIcon} alt="" />
+        View
+      </a>
     ),
-
-    status: (
-      <>
-        <Button type="primary" className="tag-primary">
-          ONLINE
-        </Button>
-      </>
+    uploadConsent: (
+      <a
+        href="#text"
+        onClick={() => message.info("Upload Consent for Ralph Edwards")}
+        className="uploadLink"
+      >
+        <img src={UploadIcon} alt="" />
+        Upload
+      </a>
     ),
-    employed: (
-      <>
-        <div className="ant-employed">
-          <span>23/04/18</span>
-          <a href="#pablo">Edit</a>
-        </div>
-      </>
+    stimReport: (
+      <a
+        href="#text"
+        onClick={() => message.info("Stim Report for Ralph Edwards")}
+        className="uploadLink"
+      >
+        <img src={UploadIcon} alt="" />
+        Upload
+      </a>
     ),
+    result: "Released",
+    reportData: (
+      <a
+        href="#text"
+        onClick={() => message.info("Viewing report Data for Ralph Edwards")}
+        className="viewLink"
+      >
+        <img src={ViewIcon} alt="" />
+        View
+      </a>
+    ),
+    status: <span className="status completed">Completed</span>,
   },
-
   {
     key: "2",
+
     name: (
-      <>
-        <Avatar.Group>
-          <Avatar
-            className="shape-avatar"
-            shape="square"
-            size={40}
-            src={face3}
-          ></Avatar>
-          <div className="avatar-info">
-            <Title level={5}>Alexa Liras</Title>
-            <p>alexa@mail.com</p>
-          </div>
-        </Avatar.Group>{" "}
-      </>
+      <div className="name">
+        Ralph Edwards
+        <br />
+        <span>SDF45678543 |</span> <span>Female</span>
+      </div>
     ),
-    function: (
-      <>
-        <div className="author-info">
-          <Title level={5}>Programator</Title>
-          <p>Developer</p>
-        </div>
-      </>
+    accession: "123RND",
+    doctor: "Cody Fisher",
+    notes: (
+      <a
+        href="#text"
+        onClick={() => message.info("Viewing notes for Ralph Edwards")}
+        className="viewLink"
+      >
+        <img src={ViewIcon} alt="" />
+        View
+      </a>
     ),
-
-    status: (
-      <>
-        <Button className="tag-badge">ONLINE</Button>
-      </>
+    uploadConsent: (
+      <a
+        href="#text"
+        onClick={() => message.info("Upload Consent for Ralph Edwards")}
+        className="uploadLink"
+      >
+        <img src={UploadIcon} alt="" />
+        Upload
+      </a>
     ),
-    employed: (
-      <>
-        <div className="ant-employed">
-          <span>23/12/20</span>
-          <a href="#pablo">Edit</a>
-        </div>
-      </>
+    stimReport: (
+      <a
+        href="#text"
+        onClick={() => message.info("Stim Report for Ralph Edwards")}
+        className="uploadLink"
+      >
+        <img src={UploadIcon} alt="" />
+        Upload
+      </a>
     ),
+    result: "Released",
+    reportData: (
+      <a
+        href="#text"
+        onClick={() => message.info("Viewing report Data for Ralph Edwards")}
+        className="viewLink"
+      >
+        <img src={ViewIcon} alt="" />
+        View
+      </a>
+    ),
+    status: <span className="status pending">Pending</span>,
   },
-
   {
     key: "3",
     name: (
-      <>
-        <Avatar.Group>
-          <Avatar
-            className="shape-avatar"
-            shape="square"
-            size={40}
-            src={face}
-          ></Avatar>
-          <div className="avatar-info">
-            <Title level={5}>Laure Perrier</Title>
-            <p>laure@mail.com</p>
-          </div>
-        </Avatar.Group>{" "}
-      </>
+      <div className="name">
+        Ralph Edwards
+        <br />
+        <span>SDF45678543 |</span> <span>Female</span>
+      </div>
     ),
-    function: (
-      <>
-        <div className="author-info">
-          <Title level={5}>Executive</Title>
-          <p>Projects</p>
-        </div>
-      </>
+    accession: "123RND",
+    doctor: "Cody Fisher",
+    notes: (
+      <a
+        href="#text"
+        onClick={() => message.info("Viewing notes for Ralph Edwards")}
+        className="viewLink"
+      >
+        <img src={ViewIcon} alt="" />
+        View
+      </a>
     ),
-
-    status: (
-      <>
-        <Button type="primary" className="tag-primary">
-          ONLINE
-        </Button>
-      </>
+    uploadConsent: (
+      <a
+        href="#text"
+        onClick={() => message.info("Upload Consent for Ralph Edwards")}
+        className="uploadLink"
+      >
+        <img src={UploadIcon} alt="" />
+        Upload
+      </a>
     ),
-    employed: (
-      <>
-        <div className="ant-employed">
-          <span>03/04/21</span>
-          <a href="#pablo">Edit</a>
-        </div>
-      </>
+    stimReport: (
+      <a
+        href="#text"
+        onClick={() => message.info("Stim Report for Ralph Edwards")}
+        className="uploadLink"
+      >
+        <img src={UploadIcon} alt="" />
+        Upload
+      </a>
     ),
+    result: "Released",
+    reportData: (
+      <a
+        href="#text"
+        onClick={() => message.info("Viewing report Data for Ralph Edwards")}
+        className="viewLink"
+      >
+        <img src={ViewIcon} alt="" />
+        View
+      </a>
+    ),
+    status: <span className="status completed">Completed</span>,
   },
   {
     key: "4",
     name: (
-      <>
-        <Avatar.Group>
-          <Avatar
-            className="shape-avatar"
-            shape="square"
-            size={40}
-            src={face4}
-          ></Avatar>
-          <div className="avatar-info">
-            <Title level={5}>Miriam Eric</Title>
-            <p>miriam@mail.com</p>
-          </div>
-        </Avatar.Group>{" "}
-      </>
+      <div className="name">
+        Ralph Edwards
+        <br />
+        <span>SDF45678543 |</span> <span>Female</span>
+      </div>
     ),
-    function: (
-      <>
-        <div className="author-info">
-          <Title level={5}>Marketing</Title>
-          <p>Organization</p>
-        </div>
-      </>
+    accession: "123RND",
+    doctor: "Cody Fisher",
+    notes: (
+      <a
+        href="#text"
+        onClick={() => message.info("Viewing notes for Ralph Edwards")}
+        className="viewLink"
+      >
+        <img src={ViewIcon} alt="" />
+        View
+      </a>
     ),
-
-    status: (
-      <>
-        <Button type="primary" className="tag-primary">
-          ONLINE
-        </Button>
-      </>
+    uploadConsent: (
+      <a
+        href="#text"
+        onClick={() => message.info("Upload Consent for Ralph Edwards")}
+        className="uploadLink"
+      >
+        <img src={UploadIcon} alt="" />
+        Upload
+      </a>
     ),
-    employed: (
-      <>
-        <div className="ant-employed">
-          <span>03/04/21</span>
-          <a href="#pablo">Edit</a>
-        </div>
-      </>
+    stimReport: (
+      <a
+        href="#text"
+        onClick={() => message.info("Stim Report for Ralph Edwards")}
+        className="uploadLink"
+      >
+        <img src={UploadIcon} alt="" />
+        Upload
+      </a>
     ),
+    result: "Released",
+    reportData: (
+      <a
+        href="#text"
+        onClick={() => message.info("Viewing report Data for Ralph Edwards")}
+        className="viewLink"
+      >
+        <img src={ViewIcon} alt="" />
+        View
+      </a>
+    ),
+    status: <span className="status pending">Pending</span>,
   },
   {
     key: "5",
     name: (
-      <>
-        <Avatar.Group>
-          <Avatar
-            className="shape-avatar"
-            shape="square"
-            size={40}
-            src={face5}
-          ></Avatar>
-          <div className="avatar-info">
-            <Title level={5}>Richard Gran</Title>
-            <p>richard@mail.com</p>
-          </div>
-        </Avatar.Group>{" "}
-      </>
+      <div className="name">
+        Ralph Edwards
+        <br />
+        <span>SDF45678543 |</span> <span>Female</span>
+      </div>
     ),
-    function: (
-      <>
-        <div className="author-info">
-          <Title level={5}>Manager</Title>
-          <p>Organization</p>
-        </div>
-      </>
+    accession: "123RND",
+    doctor: "Cody Fisher",
+    notes: (
+      <a
+        href="#text"
+        onClick={() => message.info("Viewing notes for Ralph Edwards")}
+        className="viewLink"
+      >
+        <img src={ViewIcon} alt="" />
+        View
+      </a>
     ),
-
-    status: (
-      <>
-        <Button className="tag-badge">ONLINE</Button>
-      </>
+    uploadConsent: (
+      <a
+        href="#text"
+        onClick={() => message.info("Upload Consent for Ralph Edwards")}
+        className="uploadLink"
+      >
+        <img src={UploadIcon} alt="" />
+        Upload
+      </a>
     ),
-    employed: (
-      <>
-        <div className="ant-employed">
-          <span>23/03/20</span>
-          <a href="#pablo">Edit</a>
-        </div>
-      </>
+    stimReport: (
+      <a
+        href="#text"
+        onClick={() => message.info("Stim Report for Ralph Edwards")}
+        className="uploadLink"
+      >
+        <img src={UploadIcon} alt="" />
+        Upload
+      </a>
     ),
+    result: "Released",
+    reportData: (
+      <a
+        href="#text"
+        onClick={() => message.info("Viewing report Data for Ralph Edwards")}
+        className="viewLink"
+      >
+        <img src={ViewIcon} alt="" />
+        View
+      </a>
+    ),
+    status: <span className="status pending">Pending</span>,
   },
-
   {
     key: "6",
     name: (
-      <>
-        <Avatar.Group>
-          <Avatar
-            className="shape-avatar"
-            shape="square"
-            size={40}
-            src={face6}
-          ></Avatar>
-          <div className="avatar-info">
-            <Title level={5}>John Levi</Title>
-            <p>john@mail.com</p>
-          </div>
-        </Avatar.Group>{" "}
-      </>
+      <div className="name">
+        Ralph Edwards
+        <br />
+        <span>SDF45678543 |</span> <span>Female</span>
+      </div>
     ),
-    function: (
-      <>
-        <div className="author-info">
-          <Title level={5}>Tester</Title>
-          <p>Developer</p>
-        </div>
-      </>
+    accession: "123RND",
+    doctor: "Cody Fisher",
+    notes: (
+      <a
+        href="#text"
+        onClick={() => message.info("Viewing notes for Ralph Edwards")}
+        className="viewLink"
+      >
+        <img src={ViewIcon} alt="" />
+        View
+      </a>
     ),
-
-    status: (
-      <>
-        <Button className="tag-badge">ONLINE</Button>
-      </>
+    uploadConsent: (
+      <a
+        href="#text"
+        onClick={() => message.info("Upload Consent for Ralph Edwards")}
+        className="uploadLink"
+      >
+        <img src={UploadIcon} alt="" />
+        Upload
+      </a>
     ),
-    employed: (
-      <>
-        <div className="ant-employed">
-          <span>14/04/17</span>
-          <a href="#pablo">Edit</a>
-        </div>
-      </>
+    stimReport: (
+      <a
+        href="#text"
+        onClick={() => message.info("Stim Report for Ralph Edwards")}
+        className="uploadLink"
+      >
+        <img src={UploadIcon} alt="" />
+        Upload
+      </a>
     ),
-  },
-];
-// project table start
-const project = [
-  {
-    title: "COMPANIES",
-    dataIndex: "name",
-    width: "32%",
-  },
-  {
-    title: "BUDGET",
-    dataIndex: "age",
-  },
-  {
-    title: "STATUS",
-    dataIndex: "address",
+    result: "Released",
+    reportData: (
+      <a
+        href="#text"
+        onClick={() => message.info("Viewing report Data for Ralph Edwards")}
+        className="viewLink"
+      >
+        <img src={ViewIcon} alt="" />
+        View
+      </a>
+    ),
+    status: <span className="status completed">Completed</span>,
   },
   {
-    title: "COMPLETION",
-    dataIndex: "completion",
-  },
-];
-const dataproject = [
-  {
-    key: "1",
-
+    key: "7",
     name: (
-      <>
-        <Avatar.Group>
-          <Avatar className="shape-avatar" src={ava1} size={25} alt="" />
-          <div className="avatar-info">
-            <Title level={5}>Spotify Version</Title>
-          </div>
-        </Avatar.Group>
-      </>
+      <div className="name">
+        Ralph Edwards
+        <br />
+        <span>SDF45678543 |</span> <span>Female</span>
+      </div>
     ),
-    age: (
-      <>
-        <div className="semibold">$14,000</div>
-      </>
+    accession: "123RND",
+    doctor: "Cody Fisher",
+    notes: (
+      <a
+        href="#text"
+        onClick={() => message.info("Viewing notes for Ralph Edwards")}
+        className="viewLink"
+      >
+        <img src={ViewIcon} alt="" />
+        View
+      </a>
     ),
-    address: (
-      <>
-        <div className="text-sm">working</div>
-      </>
+    uploadConsent: (
+      <a
+        href="#text"
+        onClick={() => message.info("Upload Consent for Ralph Edwards")}
+        className="uploadLink"
+      >
+        <img src={UploadIcon} alt="" />
+        Upload
+      </a>
     ),
-    completion: (
-      <>
-        <div className="ant-progress-project">
-          <Progress percent={30} size="small" />
-          <span>
-            <Link to="/">
-              <img src={pencil} alt="" />
-            </Link>
-          </span>
-        </div>
-      </>
+    stimReport: (
+      <a
+        href="#text"
+        onClick={() => message.info("Stim Report for Ralph Edwards")}
+        className="uploadLink"
+      >
+        <img src={UploadIcon} alt="" />
+        Upload
+      </a>
     ),
+    result: "Released",
+    reportData: (
+      <a
+        href="#text"
+        onClick={() => message.info("Viewing report Data for Ralph Edwards")}
+        className="viewLink"
+      >
+        <img src={ViewIcon} alt="" />
+        View
+      </a>
+    ),
+    status: <span className="status pending">Pending</span>,
   },
-
   {
-    key: "2",
+    key: "8",
     name: (
-      <>
-        <Avatar.Group>
-          <Avatar className="shape-avatar" src={ava2} size={25} alt="" />
-          <div className="avatar-info">
-            <Title level={5}>Progress Track</Title>
-          </div>
-        </Avatar.Group>
-      </>
+      <div className="name">
+        Ralph Edwards
+        <br />
+        <span>SDF45678543 |</span> <span>Female</span>
+      </div>
     ),
-    age: (
-      <>
-        <div className="semibold">$3,000</div>
-      </>
+    accession: "123RND",
+    doctor: "Cody Fisher",
+    notes: (
+      <a
+        href="#text"
+        onClick={() => message.info("Viewing notes for Ralph Edwards")}
+        className="viewLink"
+      >
+        <img src={ViewIcon} alt="" />
+        View
+      </a>
     ),
-    address: (
-      <>
-        <div className="text-sm">working</div>
-      </>
+    uploadConsent: (
+      <a
+        href="#text"
+        onClick={() => message.info("Upload Consent for Ralph Edwards")}
+        className="uploadLink"
+      >
+        <img src={UploadIcon} alt="" />
+        Upload
+      </a>
     ),
-    completion: (
-      <>
-        <div className="ant-progress-project">
-          <Progress percent={10} size="small" />
-          <span>
-            <Link to="/">
-              <img src={pencil} alt="" />
-            </Link>
-          </span>
-        </div>
-      </>
+    stimReport: (
+      <a
+        href="#text"
+        onClick={() => message.info("Stim Report for Ralph Edwards")}
+        className="uploadLink"
+      >
+        <img src={UploadIcon} alt="" />
+        Upload
+      </a>
     ),
+    result: "Released",
+    reportData: (
+      <a
+        href="#text"
+        onClick={() => message.info("Viewing report Data for Ralph Edwards")}
+        className="viewLink"
+      >
+        <img src={ViewIcon} alt="" />
+        View
+      </a>
+    ),
+    status: <span className="status completed">Completed</span>,
   },
-
   {
-    key: "3",
+    key: "9",
     name: (
-      <>
-        <Avatar.Group>
-          <Avatar className="shape-avatar" src={ava3} size={25} alt="" />
-          <div className="avatar-info">
-            <Title level={5}> Jira Platform Errors</Title>
-          </div>
-        </Avatar.Group>
-      </>
+      <div className="name">
+        Ralph Edwards
+        <br />
+        <span>SDF45678543 |</span> <span>Female</span>
+      </div>
     ),
-    age: (
-      <>
-        <div className="semibold">Not Set</div>
-      </>
+    accession: "123RND",
+    doctor: "Cody Fisher",
+    notes: (
+      <a
+        href="#text"
+        onClick={() => message.info("Viewing notes for Ralph Edwards")}
+        className="viewLink"
+      >
+        <img src={ViewIcon} alt="" />
+        View
+      </a>
     ),
-    address: (
-      <>
-        <div className="text-sm">done</div>
-      </>
+    uploadConsent: (
+      <a
+        href="#text"
+        onClick={() => message.info("Upload Consent for Ralph Edwards")}
+        className="uploadLink"
+      >
+        <img src={UploadIcon} alt="" />
+        Upload
+      </a>
     ),
-    completion: (
-      <>
-        <div className="ant-progress-project">
-          <Progress percent={100} size="small" format={() => "done"} />
-          <span>
-            <Link to="/">
-              <img src={pencil} alt="" />
-            </Link>
-          </span>
-        </div>
-      </>
+    stimReport: (
+      <a
+        href="#text"
+        onClick={() => message.info("Stim Report for Ralph Edwards")}
+        className="uploadLink"
+      >
+        <img src={UploadIcon} alt="" />
+        Upload
+      </a>
     ),
+    result: "Released",
+    reportData: (
+      <a
+        href="#text"
+        onClick={() => message.info("Viewing report Data for Ralph Edwards")}
+        className="viewLink"
+      >
+        <img src={ViewIcon} alt="" />
+        View
+      </a>
+    ),
+    status: <span className="status pending">Pending</span>,
   },
-
   {
     key: "4",
     name: (
-      <>
-        <Avatar.Group>
-          <Avatar className="shape-avatar" src={ava5} size={25} alt="" />
-          <div className="avatar-info">
-            <Title level={5}> Launch new Mobile App</Title>
-          </div>
-        </Avatar.Group>
-      </>
+      <div className="name">
+        Ralph Edwards
+        <br />
+        <span>SDF45678543 |</span> <span>Female</span>
+      </div>
     ),
-    age: (
-      <>
-        <div className="semibold">$20,600</div>
-      </>
+    accession: "123RND",
+    doctor: "Cody Fisher",
+    notes: (
+      <a
+        href="#text"
+        onClick={() => message.info("Viewing notes for Ralph Edwards")}
+        className="viewLink"
+      >
+        <img src={ViewIcon} alt="" />
+        View
+      </a>
     ),
-    address: (
-      <>
-        <div className="text-sm">canceled</div>
-      </>
+    uploadConsent: (
+      <a
+        href="#text"
+        onClick={() => message.info("Upload Consent for Ralph Edwards")}
+        className="uploadLink"
+      >
+        <img src={UploadIcon} alt="" />
+        Upload
+      </a>
     ),
-    completion: (
-      <>
-        <div className="ant-progress-project">
-          <Progress
-            percent={50}
-            size="small"
-            status="exception"
-            format={() => "50%"}
-          />
-          <span>
-            <Link to="/">
-              <img src={pencil} alt="" />
-            </Link>
-          </span>
-        </div>
-      </>
+    stimReport: (
+      <a
+        href="#text"
+        onClick={() => message.info("Stim Report for Ralph Edwards")}
+        className="uploadLink"
+      >
+        <img src={UploadIcon} alt="" />
+        Upload
+      </a>
     ),
-  },
-
-  {
-    key: "5",
-    name: (
-      <>
-        <Avatar.Group>
-          <Avatar className="shape-avatar" src={ava5} size={25} alt="" />
-          <div className="avatar-info">
-            <Title level={5}>Web Dev</Title>
-          </div>
-        </Avatar.Group>
-      </>
+    result: "Released",
+    reportData: (
+      <a
+        href="#text"
+        onClick={() => message.info("Viewing report Data for Ralph Edwards")}
+        className="viewLink"
+      >
+        <img src={ViewIcon} alt="" />
+        View
+      </a>
     ),
-    age: (
-      <>
-        <div className="semibold">$4,000</div>
-      </>
-    ),
-    address: (
-      <>
-        <div className="text-sm">working</div>
-      </>
-    ),
-    completion: (
-      <>
-        <div className="ant-progress-project">
-          <Progress percent={80} size="small" />
-          <span>
-            <Link to="/">
-              <img src={pencil} alt="" />
-            </Link>
-          </span>
-        </div>
-      </>
-    ),
-  },
-
-  {
-    key: "6",
-    name: (
-      <>
-        <Avatar.Group>
-          <Avatar className="shape-avatar" src={ava6} size={25} alt="" />
-          <div className="avatar-info">
-            <Title level={5}>Redesign Online Store</Title>
-          </div>
-        </Avatar.Group>
-      </>
-    ),
-    age: (
-      <>
-        <div className="semibold">$2,000</div>
-      </>
-    ),
-    address: (
-      <>
-        <div className="text-sm">canceled</div>
-      </>
-    ),
-    completion: (
-      <>
-        <div className="ant-progress-project">
-          <Progress percent={0} size="small" />
-          <span>
-            <Link to="/">
-              <img src={pencil} alt="" />
-            </Link>
-          </span>
-        </div>
-      </>
-    ),
+    status: <span className="status completed">Completed</span>,
   },
 ];
 
 function Patients() {
+  const [current, setCurrent] = useState(1);
+  const pageSize = 5;
   const onChange = (e) => console.log(`radio checked:${e.target.value}`);
+
+  const paginatedData = data.slice(
+    (current - 1) * pageSize,
+    current * pageSize
+  );
+
+  // Calculate the range of entries to display
+  const startEntry = (current - 1) * pageSize + 1;
+  const endEntry = Math.min(current * pageSize, data.length);
 
   return (
     <Main>
@@ -586,61 +631,82 @@ function Patients() {
           <Col xs="24" xl={24}>
             <Card
               bordered={false}
-              className="criclebox tablespace mb-24"
-              title="Authors Table"
+              className="patients-table tablespace mb-24"
+              title="Patients Table"
               extra={
                 <>
-                  <Radio.Group onChange={onChange} defaultValue="a">
-                    <Radio.Button value="a">All</Radio.Button>
-                    <Radio.Button value="b">ONLINE</Radio.Button>
-                  </Radio.Group>
+                  <Input
+                    className="header-search"
+                    placeholder="Search by Name, Case ID, Accession"
+                    prefix={
+                      <img
+                        src={SearchIcon}
+                        alt="Search Icon"
+                        style={{ width: 20, height: 20 }}
+                      />
+                    }
+                  />
                 </>
               }
             >
               <div className="table-responsive">
-                <Table
-                  columns={columns}
-                  dataSource={data}
-                  pagination={false}
-                  className="ant-border-space"
-                />
+                <div className="div-table">
+                  <div className="div-table-header">
+                    <div className="div-table-row">
+                      {columns.map((column) => (
+                        <div className="div-table-cell" key={column.key}>
+                          {column.title}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="div-table-body">
+                    {data.map((item) => (
+                      <div className="div-table-row" key={item.key}>
+                        {columns.map((column) => (
+                          <div className="div-table-cell" key={column.key}>
+                            {item[column.dataIndex]}
+                          </div>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
-            </Card>
+              <div className="table-footer">
+                <div className="pagination-text">
+                  Showing {startEntry} to {endEntry} of {data.length} entries
+                </div>
 
-            <Card
-              bordered={false}
-              className="criclebox tablespace mb-24"
-              title="Projects Table"
-              extra={
-                <>
-                  <Radio.Group onChange={onChange} defaultValue="all">
-                    <Radio.Button value="all">All</Radio.Button>
-                    <Radio.Button value="online">ONLINE</Radio.Button>
-                    <Radio.Button value="store">STORES</Radio.Button>
-                  </Radio.Group>
-                </>
-              }
-            >
-              <div className="table-responsive">
-                <Table
-                  columns={project}
-                  dataSource={dataproject}
-                  pagination={false}
-                  className="ant-border-space"
+                <Pagination
+                  current={current}
+                  pageSize={pageSize}
+                  total={data.length}
+                  onChange={(page) => setCurrent(page)}
+                  style={{ marginTop: 16, textAlign: "right" }}
                 />
               </div>
-              <div className="uploadfile pb-15 shadow-none">
-                <Upload {...formProps}>
-                  <Button
-                    type="dashed"
-                    className="ant-full-box"
-                    icon={<ToTopOutlined />}
-                  >
-                    Click to Upload
-                  </Button>
-                </Upload>
-              </div>
             </Card>
+          </Col>
+        </Row>
+        <Row gutter={[24, 0]} className="total-footer">
+          <Col xs="24" xl={24}>
+            <div>
+              <span>Total</span>
+              <span> : </span>
+              <span> 29</span>
+            </div>
+            <ul>
+              <li>
+                <span className="not-started">&nbsp;</span>Not started
+              </li>
+              <li>
+                <span className="pending">&nbsp;</span>Pending
+              </li>
+              <li>
+                <span className="completed">&nbsp;</span>Completed
+              </li>
+            </ul>
           </Col>
         </Row>
       </div>

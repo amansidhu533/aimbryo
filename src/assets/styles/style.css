@@ -1,5 +1,5 @@
 body {
-  padding: 0 0 30px 0;
+  padding: 0;
   margin: 0;
   background-color: #f9f7ff;
   letter-spacing: -0.3px;
@@ -534,9 +534,11 @@ body {
   line-height: 26px;
   border: 0;
 }
+
 :where(.css-dev-only-do-not-override-14qglws).ant-tabs .ant-tabs-tab+.ant-tabs-tab {
- margin: 0;
+  margin: 0;
 }
+
 .ant-tabs .ant-tabs-tab .ant-tabs-tab-btn {
   padding: 0 45px;
   border-radius: 16px;
@@ -638,10 +640,12 @@ body {
 .overview .ant-tabs .ant-tabs-tab .ant-tabs-tab-btn {
   padding: 0 11px;
 }
+
 .lines-wrap {
   display: flex;
   width: 100%;
 }
+
 .graph-lines {
   width: 100%;
   margin-bottom: 20px;
@@ -652,14 +656,17 @@ body {
 .line {
   height: 5px;
   display: flex;
-  width: 100%; 
+  width: 100%;
   border-radius: 4px;
   overflow: hidden;
 }
+
 .line-segment {
-  height: 4px; /* Set height as needed */
+  height: 4px;
+  /* Set height as needed */
   display: inline-block;
-  transition: width 0.3s; /* Smooth transition */
+  transition: width 0.3s;
+  /* Smooth transition */
 }
 
 .line-labels {
@@ -794,11 +801,16 @@ h4 {
 }
 
 .layout-dashboard .header-control .header-search {
-  width: 213px;
-  margin: 0 7px 0 0;
-  border-radius: 6px;
+  width: 35%;
   height: 40px;
-  border: 1px solid #d9d9d9;
+  border: 0;
+  padding: 12px 16px 12px 16px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 6px 0px #00000012;
+}
+
+.ant-input-affix-wrapper .ant-input-prefix {
+  margin-inline-end: 8px;
 }
 
 .layout-dashboard .header-control .anticon.anticon-search svg {
@@ -1555,64 +1567,6 @@ img {
   margin-bottom: 1.5rem !important;
 }
 
-.gradent {
-  background: url("../images/info-card-2.jpg") no-repeat center top;
-  background-size: cover;
-  padding: 15px;
-  border-radius: 15px;
-  color: #fff;
-}
-
-.gradent h5 {
-  color: #fff;
-}
-
-.gradent .ant-typography {
-  color: #fff;
-  font-size: 20px;
-}
-
-.gradent .icon-move-right {
-  color: #fff;
-}
-
-.gradent .icon-move-right .anticon-right {
-  color: #fff;
-}
-
-.copyright {
-  color: #8c8c8c;
-  margin-top: 7px;
-}
-
-.copyright .anticon-heart {
-  color: #f5222d;
-  margin: 0px 5px;
-}
-
-.copyright a {
-  margin: 0px 5px;
-  color: #141414;
-  font-weight: 700;
-}
-
-.footer-menu ul {
-  margin: 0px;
-  padding: 0px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.footer-menu ul li {
-  list-style: none;
-}
-
-.footer-menu ul li a {
-  padding: 0.5rem 1rem;
-  display: block;
-  color: #8c8c8c;
-}
 
 span.ismobile {
   display: none;
@@ -1819,6 +1773,7 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav li:active {
 .aside-footer {
   padding-top: 100px;
 }
+
 h5.ant-typography {
   font-family: "Poppins";
   font-size: 16px;
@@ -1827,8 +1782,103 @@ h5.ant-typography {
   color: #7B8288;
   margin: 0 0 24px 0;
 }
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .ant-card .ant-card-body {
   padding: 16px;
+}
+
+.custom-legend {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.activity-graph {}
+
+.activity-dd {
+  padding: 10px 40px 10px 10px;
+  border: 0;
+  border-radius: 5px;
+  color: #7D54F3;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: white;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url(../images/arrow-square-down.png);
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px;
+  transition: border-color 0.3s ease;
+}
+
+.activity-dd:hover {
+  border-color: #888;
+}
+
+.activity-dd:focus {
+  outline: none;
+  border-color: #7D54F3;
+}
+
+
+.stacked-btn-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border-radius: 14px;
+  background: #FAF8FF;
+  padding: 8px;
+}
+
+button.stacked-button {
+  width: 100%;
+  padding: 8px 16px 8px 8px;
+  font-variant: no-historical-ligatures;
+  border-radius: 12px;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4A5157;
+  line-height: 21px;
+  text-align: left;
+  background-color: transparent;
+  box-shadow: 2px 2px 9px 0px transparent;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+button.stacked-button span {
+  width: 32px;
+  height: 32px;
+  padding: 8px;
+  border-radius: 8px;
+  background: #ffffff;
+  display: inline-block;
+}
+
+.stacked-button.active {
+  background-color: #ffffff;
+  color: #000;
+  border: 1px solid #F2F3F3;
+  box-shadow: 2px 2px 9px 0px #0000000D;
+}
+
+button.stacked-button.active span {
+  background: #FAF8FF;
 }
 
 ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav li svg path {
@@ -1846,14 +1896,277 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav li svg path {
 }
 
 .ant-card.criclebox table th {
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-top: 14px;
-  padding-bottom: 14px;
+  font-family: "Poppins";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: left;
+  color: #4A5157;
+  border-bottom: 1px solid #F2F3F3;
+  background-color: transparent;
+}
+
+.patients-table {
+  background-color: #fff;
+  padding: 16px;
+}
+
+.patients-table .ant-card .ant-card-head {
+  border: 0;
+  padding: 0;
+}
+
+.div-table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.div-table-header {
+  display: table-header-group;
+  font-family: "Poppins";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: left;
+  color: #4A5157;
+}
+
+.div-table-row {
+  /* display: table-row; */
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.div-table-cell {
+  display: table-cell;
+  padding: 8px;
+  text-align: left;
+  flex: 0.6;
+}
+
+.div-table-body {
+  display: table-row-group;
+  font-family: "Poppins";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  text-align: left;
+
+}
+
+.div-table-body .div-table-row {
+  background: #FAFAFA;
+  margin-bottom: 10px;
+  border-radius: 12px;
+}
+
+.div-table-header .div-table-cell:first-child,
+.div-table-body .div-table-cell:first-child {
+  flex: 1;
+}
+
+.div-table-body .div-table-cell {}
+
+.div-table-cell .name {
+  font-family: "Poppins";
+  font-weight: 500;
+}
+
+.div-table-cell .name span {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  text-align: left;
+  color: #3768C5;
+}
+
+span.status {
+  display: inline-block;
+  padding: 0 10px 0 10px;
+  border-radius: 100px;
+  font-family: "Poppins";
+  font-size: 12px;
+  font-weight: 500;
+  height: 22px;
+  line-height: 22px;
+  letter-spacing: 0.04em;
+  text-align: left;
+}
+
+span.status.completed {
+  border: 1px solid #37C577;
+  color: #37C577;
+  background: #F4FFF8;
+}
+
+span.status.pending {
+  border: 1px solid #EC9D3E;
+  color: #EC9D3E;
+  background: #FFF8EE;
+}
+
+.div-table-body .div-table-row a {
+  font-family: "Poppins";
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+  text-align: left;
+  text-decoration: underline;
+  display: flex;
+  text-decoration: underline;
+  align-items: center;
+  gap: 6px;
+}
+
+.div-table-body .div-table-row .viewLink {
+  color: #37C577;
+}
+
+.div-table-body .div-table-row .uploadLink {
+  color: #7D54F3;
+}
+
+.table-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination-text {
+  font-family: "Poppins";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #4A5157;
+
+}
+
+.ant-pagination .ant-pagination-item {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  line-height: 20px;
+  border: 0;
+}
+
+.ant-pagination .ant-pagination-item a {
+  width: 20px;
+  height: 20px;
+  font-family: "Poppins";
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: center;
+  color: #AAB1B9;
+}
+
+.ant-pagination .ant-pagination-item-active a {
+  color: #272D36;
+}
+
+.ant-pagination .ant-pagination-prev,
+.ant-pagination .ant-pagination-next,
+.ant-pagination .ant-pagination-jump-prev,
+.ant-pagination .ant-pagination-jump-next {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border: 1.5px solid #7D54F3;
+  color: #7D54F3;
+}
+
+.ant-pagination .ant-pagination-disabled,
+.ant-pagination .ant-pagination-disabled:hover {
+  border: 1.5px solid #C6CAD1;
+  color: #C6CAD1;
+}
+
+.ant-table-wrapper .ant-table-thead>tr>th,
+.ant-table-wrapper .ant-table-thead>tr>td {
+  background: transparent;
+}
+
+.ant-table-wrapper .ant-table-tbody>tr>th,
+.ant-table-wrapper .ant-table-tbody>tr>td {
+  border-bottom: 0;
+}
+
+.ant-table-wrapper .ant-table-tbody.custom-row>tr>td {
+  font-family: "Poppins";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #272D36;
+  border-bottom: 10px solid #fff;
 }
 
 .percent-progress .ant-progress-bg {
   height: 3px !important;
+}
+
+.total-footer {
+  background-color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 8px 0 !important;
+
+}
+
+.total-footer .ant-col {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total-footer .ant-col div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #232323;
+  text-align: left;
+  gap: 16px;
+}
+
+.total-footer ul {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.total-footer ul li {
+  list-style: none;
+  font-family: "Poppins";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  color: #272D36;
+}
+
+.total-footer ul li span {
+  width: 8px;
+  height: 20px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.total-footer ul li span.not-started {
+  background: #7F7F7F;
+}
+
+.total-footer ul li span.pending {
+  background: #EC9D3E;
+}
+
+.total-footer ul li span.completed {
+  background: #37C577;
 }
 
 .uploadfile {
@@ -1866,8 +2179,12 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav li svg path {
 }
 
 .tablespace .ant-card-head-title {
-  font-size: 20px;
-  font-weight: 600;
+  font-family: "Poppins";
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  color: #4A5157;
+  text-align: left;
 }
 
 .ant-radio-button-wrapper:first-child {
@@ -2151,18 +2468,6 @@ body {
   display: none;
 }
 
-.sign-up-header {
-  height: 550px;
-  margin-top: -62.8px;
-  padding-top: 137.8px;
-  border-radius: 12px;
-  box-shadow: 0 20px 27px rgb(0 0 0 / 5%);
-  background-size: cover;
-  background-position: 50%;
-  text-align: center;
-  background: url("../images/bg-signup.jpg") no-repeat center top;
-}
-
 .header-col.header-brand {
   white-space: nowrap;
 }
@@ -2255,7 +2560,7 @@ body {
 
 
 
- 
+
 
 
 
@@ -2625,6 +2930,18 @@ button.ant-btn.bell strong {
 
 .layout-dashboard .header-control .header-search input.ant-input {
   height: auto;
+  color: #4A5157;
+  font-size: 14px;
+}
+
+.layout-dashboard .header-control .header-search input.ant-input::placeholder {
+  font-family: "Poppins";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  text-align: left;
+  color: #4A5157;
+
 }
 
 small.redtext {
@@ -2650,24 +2967,6 @@ section.ant-layout.layout-content .ant-layout-content.content-ant {
 
 .number .ant-row {
   align-items: flex-start !important;
-}
-
-.card-credit {
-  background-image: url("../images/info-card-3.jpg");
-  background-position: 50%;
-  background-size: cover;
-  border: none;
-}
-
-.card-credit * {
-  color: #fff;
-}
-
-.card-credit .card-number {
-  word-spacing: 10px;
-  font-weight: 600;
-  margin-bottom: 45px;
-  font-size: 20px;
 }
 
 .ant-card-head-wrapper {

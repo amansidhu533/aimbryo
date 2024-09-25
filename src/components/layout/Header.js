@@ -3,8 +3,6 @@ import { useLocation } from "react-router-dom"; // Import useLocation to get cur
 
 import { Row, Col, Badge, Button, Input, Drawer, Typography } from "antd";
 
-import { SearchOutlined } from "@ant-design/icons";
-
 import Message from "../../assets/images/icon-messages.svg";
 import Notification from "../../assets/images/icon-notification.svg";
 import AimbryoLogo from "../../assets/images/logo-aimbryo.png";
@@ -13,6 +11,7 @@ import AiooLogo from "../../assets/images/logo-aioo.png";
 import AlikeLogo from "../../assets/images/logo-alike.png";
 import EraiLogo from "../../assets/images/logo-erai.png";
 import Profile from "../../assets/images/profile-img.png";
+import SearchIcon from "../../assets/images/icon-search.png";
 
 const bell = (
   <img src={Notification} alt="message icon" width="20" height="21" />
@@ -60,7 +59,7 @@ function Header({ placement, subName }) {
       </Col>
       <Col span={24} md={18} className="header-control">
         <div className="header-icons profile-img">
-          <img src={Profile} alt={Profile}/>
+          <img src={Profile} alt={Profile} />
         </div>
         <div className="header-icons">
           <Badge size="small">
@@ -128,8 +127,8 @@ function Header({ placement, subName }) {
         ) : (
           <Input
             className="header-search"
-            placeholder="Type here..."
-            prefix={<SearchOutlined />}
+            placeholder="You can search here"
+            prefix={<img src={SearchIcon} alt="Search Icon" style={{ width: 20, height: 20 }} />}
           />
         )}
       </Col>

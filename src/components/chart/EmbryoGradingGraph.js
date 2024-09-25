@@ -482,16 +482,22 @@ const EmbryoGradingGraph = () => {
     indexAxis: "y",
     scales: {
       x: {
+        grid: {
+          display: false,  
+        },
         beginAtZero: true,
         stacked: true,
       },
       y: {
+        grid: {
+          display: false, 
+        },
         stacked: true,
       },
     },
     plugins: {
       legend: {
-        display: true,
+        display: false,
         position: "top",
       },
     },
@@ -503,22 +509,44 @@ const EmbryoGradingGraph = () => {
     categoryPercentage: 0.8, // Controls the width of the bars relative to the category width
     barPercentage: 0.9, // Controls the width of the bars themselves
   };
-
+  const CustomLegend = () => {
+    return (
+      <div className="custom-legend">
+        {dataMap[activeTab].datasets.map((dataset, index) => (
+          <div
+            key={index}
+            style={{ display: "flex", alignItems: "center", margin: "4px" }}
+          >
+            <div
+              style={{
+                width: "13px",
+                height: "13px",
+                backgroundColor: dataset.backgroundColor,
+                borderRadius: "50%",
+                marginRight: "8px",
+              }}
+            ></div>
+            <span>{dataset.label}</span>
+          </div>
+        ))}
+      </div>
+    );
+  };
   return (
-    <div
-      style={{
-        padding: "20px",
-      }}
-    >
-      <Tabs activeKey={activeTab} onChange={setActiveTab} centered>
-        <TabPane tab="Count" key="count" />
-        <TabPane tab="Day" key="day" />
-        <TabPane tab="Age" key="age" />
-        <TabPane tab="Source" key="source" />
-        <TabPane tab="Fertilization" key="fertilization" />
-        <TabPane tab="Protocol" key="protocol" />
-      </Tabs>
-      <Bar data={dataMap[activeTab]} options={options} />
+    <div>
+      <div className="card-header">
+        <h5 className="ant-typography">Embryo Grading</h5>
+        <Tabs activeKey={activeTab} onChange={setActiveTab} centered>
+          <TabPane tab="Count" key="count" />
+          <TabPane tab="Day" key="day" />
+          <TabPane tab="Age" key="age" />
+          <TabPane tab="Source" key="source" />
+          <TabPane tab="Fertilization" key="fertilization" />
+          <TabPane tab="Protocol" key="protocol" />
+        </Tabs>
+      </div>
+      <CustomLegend />
+      <Bar data={dataMap[activeTab]} options={options} height={80} />
     </div>
   );
 };

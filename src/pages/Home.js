@@ -1,6 +1,8 @@
 import { useState } from "react";
 
 import { Card, Col, Row, Typography } from "antd";
+import {} from "@ant-design/icons";
+
 import totalPaitents from "../assets/images/icon-2users.svg";
 import totalEmb from "../assets/images/icon-embryobank.svg";
 import avgEmb from "../assets/images/icon-embavg.svg";
@@ -13,6 +15,10 @@ import ActivityGraph from "../components/chart/ActivityGraph";
 import EmbryoGradingGraph from "../components/chart/EmbryoGradingGraph";
 function Home() {
   const { Title, Text } = Typography;
+
+  const onChange = (e) => console.log(`radio checked:${e.target.value}`);
+
+  const [reverse, setReverse] = useState(false);
 
   const count = [
     {
@@ -44,7 +50,7 @@ function Home() {
   return (
     <Main>
       <div className="layout-content">
-        <Row className="rowgap-vbox" gutter={[8, 0]}>
+        <Row className="rowgap-vbox h-full" gutter={[8, 0]}>
           {count.map((c, index) => (
             <Col
               key={index}
@@ -75,13 +81,12 @@ function Home() {
         </Row>
 
         <Row gutter={[8, 0]}>
-          <Col xs={24} sm={24} md={12} lg={12} xl={7} className="mb-8">
+          <Col xs={24} sm={24} md={12} lg={12} xl={7} className="mb-8 h-full">
             <Card bordered={false} className="mb-8">
               <Title level={5}>Overview</Title>
               <Overview />
             </Card>
-            <Card bordered={false} className="h-full">
-              <Title level={5}>Activity</Title>
+            <Card bordered={false} className="h-full"> 
               <ActivityGraph />
             </Card>
           </Col>
@@ -101,7 +106,6 @@ function Home() {
               </Col>
               <Col xs={24} sm={24} md={12} lg={12} xl={24} className="mb-8">
                 <Card bordered={false} className="h-full">
-                  <Title level={5}>Embryo Grading</Title>
                   <EmbryoGradingGraph />
                 </Card>
               </Col>
