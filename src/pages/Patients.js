@@ -651,7 +651,7 @@ function Patients() {
             <Card
               bordered={false}
               className="patients-table tablespace mb-24"
-              title="Patients Table"
+              title="Patients"
               extra={
                 <div className="header-right">
                   <Input
