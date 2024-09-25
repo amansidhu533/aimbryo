@@ -2138,6 +2138,8 @@ span.status.pending {
   display: flex;
   justify-content: space-between;
   gap: 40px;
+  padding: 0;
+  margin: 0;
 }
 
 .total-footer ul li {
@@ -2185,6 +2187,60 @@ span.status.pending {
   line-height: 27px;
   color: #4A5157;
   text-align: left;
+}
+
+.ant-card .ant-card-extra {
+  flex: 0.8;
+}
+
+.ant-card .ant-card-extra .header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-right .header-search {
+  height: 37px;
+  padding: 0 8px;
+  gap: 10px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 6px 0px #00000012;
+  border: 0;
+}
+
+.header-right .header-search input {
+  font-family: "Poppins";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  text-align: left;
+  color: #4A5157;
+
+}
+
+.header-right .header-search input::placeholder {
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  text-align: left;
+  color: #4A5157;
+
+}
+
+.ant-card .ant-card-extra .header-right button {
+  width: 36px;
+  height: 32px;
+  padding: 0;
+  margin: 0;
+  border-radius: 8px;
+  border: 1px solid #F2F3F3;
+  display: inline-block
+}
+
+.ant-card .ant-card-extra .header-right button img {
+  width: 20px;
+  height: 20px;
 }
 
 .ant-radio-button-wrapper:first-child {

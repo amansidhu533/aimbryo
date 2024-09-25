@@ -13,6 +13,8 @@ import Main from "../components/layout/Main";
 import ViewIcon from "../assets/images/icon-view.png";
 import UploadIcon from "../assets/images/icon-upload.png";
 import SearchIcon from "../assets/images/icon-search.png";
+import AddIcon from "../assets/images/icon-add.png";
+import FilterIcon from "../assets/images/icon-filter.png";
 
 import Input from "antd/es/input/Input";
 const { Title } = Typography;
@@ -108,7 +110,7 @@ const data = [
         Upload
       </a>
     ),
-    result: "Released",
+    result: "N/A",
     reportData: (
       <a
         href="#text"
@@ -325,7 +327,7 @@ const data = [
         Upload
       </a>
     ),
-    result: "Released",
+    result: "N/A",
     reportData: (
       <a
         href="#text"
@@ -487,7 +489,7 @@ const data = [
         Upload
       </a>
     ),
-    result: "Released",
+    result: "N/A",
     reportData: (
       <a
         href="#text"
@@ -624,6 +626,13 @@ function Patients() {
   const startEntry = (current - 1) * pageSize + 1;
   const endEntry = Math.min(current * pageSize, data.length);
 
+  const handleAddClick = () => {
+    message.info("Add button clicked!");
+  };
+
+  const handleFilterClick = () => {
+    message.info("Filter button clicked!");
+  };
   return (
     <Main>
       <div className="tabled">
@@ -634,7 +643,7 @@ function Patients() {
               className="patients-table tablespace mb-24"
               title="Patients Table"
               extra={
-                <>
+                <div className="header-right">
                   <Input
                     className="header-search"
                     placeholder="Search by Name, Case ID, Accession"
@@ -646,7 +655,17 @@ function Patients() {
                       />
                     }
                   />
-                </>
+                  <Button
+                    type="default"
+                    onClick={handleAddClick}
+                    style={{ marginRight: 10 }}
+                  >
+                    <img src={AddIcon} alt="Add" />
+                  </Button>
+                  <Button type="default" onClick={handleFilterClick}>
+                    <img src={FilterIcon} alt="Add" />
+                  </Button>
+                </div>
               }
             >
               <div className="table-responsive">
@@ -693,8 +712,8 @@ function Patients() {
           <Col xs="24" xl={24}>
             <div>
               <span>Total</span>
-              <span> : </span>
-              <span> 29</span>
+              <span>:</span>
+              <span>29</span>
             </div>
             <ul>
               <li>
