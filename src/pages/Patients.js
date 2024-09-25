@@ -13,7 +13,7 @@ import { useState } from "react";
 import Main from "../components/layout/Main";
 import ViewIcon from "../assets/images/icon-view.png";
 import UploadIcon from "../assets/images/icon-upload.png";
-import SearchIcon from "../assets/images/icon-search.png";
+import SearchIcon from "../assets/images/search-normal.png";
 import AddIcon from "../assets/images/icon-add.png";
 import FilterIcon from "../assets/images/icon-filter.png";
 
@@ -661,7 +661,7 @@ function Patients() {
                       <img
                         src={SearchIcon}
                         alt="Search Icon"
-                        style={{ width: 20, height: 20 }}
+                        style={{ width: 16, height: 16 }}
                       />
                     }
                   />
