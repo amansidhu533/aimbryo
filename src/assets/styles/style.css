@@ -2284,7 +2284,10 @@ span.status.pending {
   display: flex;
   margin-bottom: 24px;
 }
-
+.tabs-filter .ant-tabs .ant-tabs-tab .ant-tabs-tab-btn {
+ 
+  padding: 0 30px;
+}
 .ant-tabs>.ant-tabs-nav,
 .ant-tabs>div>.ant-tabs-nav {
   position: relative;
