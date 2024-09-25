@@ -534,11 +534,18 @@ body {
   line-height: 26px;
   border: 0;
 }
-
+:where(.css-dev-only-do-not-override-14qglws).ant-tabs .ant-tabs-tab+.ant-tabs-tab {
+ margin: 0;
+}
 .ant-tabs .ant-tabs-tab .ant-tabs-tab-btn {
   padding: 0 45px;
   border-radius: 16px;
+  font-family: "Poppins";
+  font-size: 12px;
+  letter-spacing: 0.2px;
+  font-weight: 500;
 }
+
 
 .ant-tabs-ink-bar.ant-tabs-ink-bar-animated {
   display: none;
@@ -626,6 +633,107 @@ body {
   width: 22px;
   height: 22px;
 }
+
+
+.overview .ant-tabs .ant-tabs-tab .ant-tabs-tab-btn {
+  padding: 0 11px;
+}
+.lines-wrap {
+  display: flex;
+  width: 100%;
+}
+.graph-lines {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.line {
+  height: 5px;
+  display: flex;
+  width: 100%; 
+  border-radius: 4px;
+  overflow: hidden;
+}
+.line-segment {
+  height: 4px; /* Set height as needed */
+  display: inline-block;
+  transition: width 0.3s; /* Smooth transition */
+}
+
+.line-labels {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 4px;
+}
+
+.line-label {
+  font-family: "Poppins";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: left;
+  color: #4A5157;
+}
+
+/* Color Classes */
+.blue-line {
+  background-color: #4a90e2;
+}
+
+.green-line {
+  background-color: #7ed321;
+}
+
+.red-line {
+  background-color: #d0021b;
+}
+
+.purple-line {
+  background-color: #9013fe;
+}
+
+.orange-line {
+  background-color: #f5a623;
+}
+
+.teal-line {
+  background-color: #50e3c2;
+}
+
+/* Legend Styles */
+.legend {
+  background: #FAF8FF;
+  padding: 27px 12px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-family: "Poppins";
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #a2a4aa;
+  letter-spacing: 0.2px;
+}
+
+.legend-color {
+  border-radius: 4px;
+  margin-right: 8px;
+  width: 4px;
+  height: 12px;
+}
+
+
+
 
 .h3,
 .h4,
@@ -1711,7 +1819,14 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav li:active {
 .aside-footer {
   padding-top: 100px;
 }
-
+h5.ant-typography {
+  font-family: "Poppins";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #7B8288;
+  margin: 0 0 24px 0;
+}
 .ant-card .ant-card-body {
   padding: 16px;
 }
@@ -2137,6 +2252,13 @@ body {
 .sign-up-gateways {
   text-align: center;
 }
+
+
+
+ 
+
+
+
 
 .m-25,
 .mb-25,
