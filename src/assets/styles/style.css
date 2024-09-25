@@ -2199,6 +2199,11 @@ span.status.pending {
   gap: 8px;
 }
 
+.ant-card .ant-card-head {
+
+  border-bottom: 0;
+}
+
 .header-right .header-search {
   height: 37px;
   padding: 0 8px;
@@ -2226,6 +2231,42 @@ span.status.pending {
   text-align: left;
   color: #4A5157;
 
+}
+
+.checkbox-grp {
+  display: flex;
+  margin: 24px 16px;
+}
+
+.checkbox-grp .ant-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkbox-grp .ant-row .ant-col label {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-grp .ant-row .ant-checkbox-wrapper {
+  font-family: "Poppins";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #4A5157;
+}
+
+.ant-checkbox .ant-checkbox-inner {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #C6CAD1;
+  border-radius: 6px;
+}
+
+.ant-checkbox-wrapper:not(.ant-checkbox-wrapper-disabled):hover .ant-checkbox-checked:not(.ant-checkbox-disabled) .ant-checkbox-inner,
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #7d54f3;
+  border-color: transparent;
 }
 
 .ant-card .ant-card-extra .header-right button {

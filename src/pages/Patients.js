@@ -7,6 +7,7 @@ import {
   Button,
   Typography,
   Pagination,
+  Checkbox,
 } from "antd";
 import { useState } from "react";
 import Main from "../components/layout/Main";
@@ -613,6 +614,7 @@ const data = [
 ];
 
 function Patients() {
+  const [checkedValues, setCheckedValues] = useState([]);
   const [current, setCurrent] = useState(1);
   const pageSize = 5;
   const onChange = (e) => console.log(`radio checked:${e.target.value}`);
@@ -632,6 +634,14 @@ function Patients() {
 
   const handleFilterClick = () => {
     message.info("Filter button clicked!");
+  };
+
+
+  const options = ['No Transferable Embryos', 'All Transferable Embryos', 'Draft Patients', 'International Patients'];
+
+  const onCheckboxChange = (checkedValues) => {
+    setCheckedValues(checkedValues);
+    console.log('checked = ', checkedValues);
   };
   return (
     <Main>
@@ -668,6 +678,15 @@ function Patients() {
                 </div>
               }
             >
+               <Checkbox.Group onChange={onCheckboxChange} value={checkedValues} className="checkbox-grp">
+                <Row gutter={[16, 16]}>
+                  {options.map((option, index) => (
+                    <Col key={index}>
+                      <Checkbox value={option}>{option}</Checkbox>
+                    </Col>
+                  ))}
+                </Row>
+              </Checkbox.Group>
               <div className="table-responsive">
                 <div className="div-table">
                   <div className="div-table-header">
