@@ -9,7 +9,8 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { Tabs } from "antd";
+import { Button, message, Tabs } from "antd";
+import FilterIcon from "../../assets/images/icon-filter1.png";
 
 ChartJS.register(
   CategoryScale,
@@ -482,15 +483,29 @@ const EmbryoGradingGraph = () => {
     indexAxis: "y",
     scales: {
       x: {
+        ticks: {
+          display: false,
+        },
         grid: {
-          display: false,  
+          display: false,
         },
         beginAtZero: true,
         stacked: true,
       },
       y: {
         grid: {
-          display: false, 
+          display: false,
+        },
+        title: {
+          display: true,  
+          text: "Days",  
+          color: "#a4a7aa",  
+          font: {
+            family: "Poppins",
+            size: 12,  
+            weight: "400", 
+            color: "#a4a7aa",  
+          },
         },
         stacked: true,
       },
@@ -532,18 +547,26 @@ const EmbryoGradingGraph = () => {
       </div>
     );
   };
+  const handleFilterClick = () => {
+    message.info("Filter button clicked!");
+  };
   return (
     <div>
       <div className="card-header">
         <h5 className="ant-typography">Embryo Grading</h5>
-        <Tabs activeKey={activeTab} onChange={setActiveTab} centered>
-          <TabPane tab="Count" key="count" />
-          <TabPane tab="Day" key="day" />
-          <TabPane tab="Age" key="age" />
-          <TabPane tab="Source" key="source" />
-          <TabPane tab="Fertilization" key="fertilization" />
-          <TabPane tab="Protocol" key="protocol" />
-        </Tabs>
+        <div className="tabs-filter">
+          <Tabs activeKey={activeTab} onChange={setActiveTab} centered>
+            <TabPane tab="Count" key="count" />
+            <TabPane tab="Day" key="day" />
+            <TabPane tab="Age" key="age" />
+            <TabPane tab="Source" key="source" />
+            <TabPane tab="Fertilization" key="fertilization" />
+            <TabPane tab="Protocol" key="protocol" />
+          </Tabs>
+          <Button type="default" onClick={handleFilterClick}>
+            <img src={FilterIcon} alt="Filter" />
+          </Button>
+        </div>
       </div>
       <CustomLegend />
       <Bar data={dataMap[activeTab]} options={options} height={80} />

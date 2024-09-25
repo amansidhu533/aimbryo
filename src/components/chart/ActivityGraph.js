@@ -43,7 +43,7 @@ const ActivityGraph = () => {
         },
         barThickness: 22,
         data:
-          view === "week" ? [12, 19, 3, 5, 2, 3, 10] : [2, 3, 1, 4, 2, 1, 0],  
+          view === "week" ? [12, 19, 3, 5, 2, 3, 10] : [2, 3, 1, 4, 2, 1, 0],
       },
     ],
   };
@@ -55,7 +55,7 @@ const ActivityGraph = () => {
           display: false,
         },
         ticks: {
-          display: false, 
+          display: false,
         },
         beginAtZero: true,
       },
@@ -111,7 +111,7 @@ const ActivityGraph = () => {
         </button>
       </div>
 
-      <Bar data={data} options={options} height={255}  />
+      <Bar data={data} options={options} height={255} />
     </div>
   );
 };

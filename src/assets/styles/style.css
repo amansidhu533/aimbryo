@@ -2279,6 +2279,27 @@ span.status.pending {
   display: inline-block
 }
 
+.tabs-filter {
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.ant-tabs>.ant-tabs-nav,
+.ant-tabs>div>.ant-tabs-nav {
+  position: relative;
+  display: flex;
+  flex: none;
+  align-items: center;
+  margin: 0;
+}
+
+.tabs-filter button.ant-btn.ant-btn-default.ant-btn-outlined {
+  margin: 0 0 0 12px;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+}
+
 .ant-card .ant-card-extra .header-right button img {
   width: 20px;
   height: 20px;

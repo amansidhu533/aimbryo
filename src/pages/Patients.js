@@ -673,7 +673,7 @@ function Patients() {
                     <img src={AddIcon} alt="Add" />
                   </Button>
                   <Button type="default" onClick={handleFilterClick}>
-                    <img src={FilterIcon} alt="Add" />
+                    <img src={FilterIcon} alt="Filter" />
                   </Button>
                 </div>
               }
