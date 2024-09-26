@@ -76,6 +76,7 @@ body {
 .logo-cont {
   display: flex;
   padding: 0px;
+  margin: 0;
   gap: 12px;
 }
 
@@ -487,7 +488,9 @@ body {
   border-radius: 12px;
   transition: 0.2s;
 }
-
+header.ant-layout-header .ant-row {
+  border-bottom: 1px solid #EFEDF2;
+}
 .layout-dashboard .ant-breadcrumb>span .ant-breadcrumb-link a {
   color: #8c8c8c;
 }
@@ -512,9 +515,8 @@ body {
 .layout-dashboard .header-control {
   display: flex;
   flex-direction: row-reverse;
-  margin: 0;
   align-items: center;
-  margin-top: 10px;
+  margin: 10px 0 25px;
   padding: 0 !important;
 }
 
