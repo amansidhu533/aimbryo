@@ -865,9 +865,8 @@ h6 {
   margin: 0px;
 }
 
-.layout-dashboard .header-control .header-search .ant-input-suffix .ant-input-search-icon.anticon-loading,
 .layout-dashboard .header-control .sidebar-toggler {
-  display: block;
+  display: none;
 }
 
 .layout-dashboard .header-control .btn-sign-in span {
@@ -1575,76 +1574,6 @@ span.ismobile {
   cursor: pointer;
 }
 
-@media (max-width: 992px) {
-  .footer-menu ul {
-    justify-content: center;
-  }
-
-  footer.ant-layout-footer {
-    padding: 0px 15px;
-    text-align: center;
-  }
-
-  .project-ant {
-    display: block;
-  }
-
-  .ant-filtertabs {
-    text-align: right;
-  }
-
-  .rightside-top span.ant-input-affix-wrapper {
-    width: 200px;
-  }
-
-  .rightside-top {
-    justify-content: flex-end;
-  }
-
-  header.ant-layout-header.subheader {
-    padding: 0px 24px 0px 0px;
-  }
-
-  main.ant-layout-content.content-ant {
-    padding-left: 0px !important;
-  }
-
-  .ant-row {
-    margin-left: -12px;
-    margin-right: -12px;
-  }
-
-  span.ismobile {
-    display: inline-block;
-  }
-
-  .bar-chart {
-    width: 100% !important;
-    max-width: 100%;
-  }
-
-  .full-width {
-    max-width: 100% !important;
-  }
-
-  .bar-chart {
-    width: 100% !important;
-  }
-
-  .icon-move-right {
-    margin-bottom: 15px;
-  }
-
-  .pageheader {
-    display: block;
-  }
-
-  .ant-cret img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-  }
-}
 
 .sidebar-color {
   padding: 1.5rem 0px;
@@ -2284,10 +2213,12 @@ span.status.pending {
   display: flex;
   margin-bottom: 24px;
 }
+
 .tabs-filter .ant-tabs .ant-tabs-tab .ant-tabs-tab-btn {
- 
+
   padding: 0 30px;
 }
+
 .ant-tabs>.ant-tabs-nav,
 .ant-tabs>div>.ant-tabs-nav {
   position: relative;
@@ -2296,7 +2227,7 @@ span.status.pending {
   align-items: center;
   margin: 0;
 }
-
+.ant-tabs .ant-tabs-content-holder{margin-top: 16px;}
 .tabs-filter button.ant-btn.ant-btn-default.ant-btn-outlined {
   margin: 0 0 0 12px;
   padding: 0;
@@ -3892,4 +3823,96 @@ button.ant-btn.ant-btn-dashed.ant-full-box svg {
 
 section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile .header-control span.ant-input-affix-wrapper.header-search .anticon-search svg path {
   fill: #8c8c8c;
+}
+
+
+@media (max-width: 992px) {
+  .footer-menu ul {
+    justify-content: center;
+  }
+
+  footer.ant-layout-footer {
+    padding: 0px 15px;
+    text-align: center;
+  }
+
+  .project-ant {
+    display: block;
+  }
+
+  .ant-filtertabs {
+    text-align: right;
+  }
+
+  .rightside-top span.ant-input-affix-wrapper {
+    width: 200px;
+  }
+
+  .rightside-top {
+    justify-content: flex-end;
+  }
+
+  header.ant-layout-header.subheader {
+    padding: 0px 24px 0px 0px;
+  }
+
+  main.ant-layout-content.content-ant {
+    padding-left: 0px !important;
+  }
+
+  .ant-row {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+
+  .total-footer {
+    display: block;
+  }
+
+  .layout-dashboard .header-control .sidebar-toggler {
+    display: block;
+  }
+
+  .embGrad.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .checkbox-grp .ant-row .ant-col {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  span.ismobile {
+    display: inline-block;
+  }
+
+  .bar-chart {
+    width: 100% !important;
+    max-width: 100%;
+  }
+
+  .full-width {
+    max-width: 100% !important;
+  }
+
+  .bar-chart {
+    width: 100% !important;
+  }
+
+  .icon-move-right {
+    margin-bottom: 15px;
+  }
+
+  .pageheader {
+    display: block;
+  }
+
+  .ant-cret img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
 }

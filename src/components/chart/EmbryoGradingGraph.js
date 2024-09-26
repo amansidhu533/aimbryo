@@ -552,7 +552,7 @@ const EmbryoGradingGraph = () => {
   };
   return (
     <div>
-      <div className="card-header">
+      <div className="embGrad card-header">
         <h5 className="ant-typography">Embryo Grading</h5>
         <div className="tabs-filter">
           <Tabs activeKey={activeTab} onChange={setActiveTab} centered>

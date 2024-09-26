@@ -81,7 +81,7 @@ function Home() {
         </Row>
 
         <Row gutter={[8, 0]}>
-          <Col xs={24} sm={24} md={12} lg={12} xl={7} className="mb-8 h-full">
+          <Col xs={24} sm={24} md={24} lg={24} xl={7} className="mb-8 h-full">
             <Card bordered={false} className="mb-8">
               <Title level={5}>Overview</Title>
               <Overview />
@@ -90,21 +90,21 @@ function Home() {
               <ActivityGraph />
             </Card>
           </Col>
-          <Col xs={24} sm={24} md={12} lg={12} xl={17} className="mb-8">
+          <Col xs={24} sm={24} md={24} lg={24} xl={17} className="mb-8">
             <Row gutter={[8, 0]}>
-              <Col xs={24} sm={24} md={12} lg={12} xl={13} className="mb-8">
+              <Col xs={24} sm={24} md={24} lg={24} xl={13} className="mb-8">
                 <Card bordered={false} className="h-full">
                   <Title level={5}>Age Distribution</Title>
                   <AgeDistributionChart />
                 </Card>
               </Col>
-              <Col xs={24} sm={24} md={12} lg={12} xl={11} className="mb-8">
+              <Col xs={24} sm={24} md={24} lg={24} xl={11} className="mb-8">
                 <Card bordered={false} className="h-full">
                   <Title level={5}>Source</Title>
                   <DonutChart />
                 </Card>
               </Col>
-              <Col xs={24} sm={24} md={12} lg={12} xl={24} className="mb-8">
+              <Col xs={24} sm={24} md={24} lg={24} xl={24} className="mb-8">
                 <Card bordered={false} className="h-full">
                   <EmbryoGradingGraph />
                 </Card>
